@@ -16,7 +16,7 @@ n=4,left=7,right=14 -> [1,2,3,4],[2,2,3,4],[3,3,3,4],[4,4,4,4] -> [4,3,3,3,4,4,4
 첫줄은 1~n, 둘째줄은 2,2~n, 셋째줄은 3,3,3~n, ..., i째줄은 ixi~n
  -> i in 1..n -> j in 1..n -> i와 j중 큰 값 -> i*n+j in left..right
 시간초과! -> right-left+1개의 result[]를 만들고 돌려서
- -> i는 index % n, j는 index / n -> index가 left부터 시작해야 하므로, index=index+left 처리
+ -> i는 index % n, j는 index / n -> index 범위는 left~right
 
 4. 구현코드
 
@@ -29,9 +29,14 @@ const solution = (n: number, left: number, right: number): number[] => {
 };
 
 const byN = (n: number, left: number, right: number): number[] => {
-  return Array.from({ length: right - left + 1 }, (v, index) =>
-    Math.max(((index + left) % n) + 1, Math.trunc((index + left) / n) + 1),
-  );
+  const result: number[] = [];
+
+  for (let index = left; index <= right; index++) {
+    const value = Math.max((index % n) + 1, Math.trunc(index / n) + 1);
+    result.push(value);
+  }
+
+  return result;
 };
 
 const byNSquare = (n: number, left: number, right: number): number[] => {

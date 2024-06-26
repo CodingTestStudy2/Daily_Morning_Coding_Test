@@ -42,7 +42,7 @@ const solution = (user_ids: string[], banned_ids: string[]) => {
     counts.push(count);
 
     if (count > 0) {
-      const combination = (factorial(count) / factorial(count - r)) * factorial(r);
+      const combination = factorial(count) / (factorial(count - r) * factorial(r));
       combinations *= combination;
     }
   }

@@ -1,41 +1,41 @@
 #include <string>
 #include <vector>
+#include <algorithm>
 #include <iostream>
 
 using namespace std;
 
-// 못품
-bool cross_stones(vector<int>& stones, int k) {
-    int cur_stone = 0;
-    int nxt_stone = 0;
-    int ans = 0;
-    while (true) {
-        if (cur_stone == stones.size()) 
-            return false;
-        nxt_stone = cur_stone + 1;
-        while (stones[nxt_stone] == 0) {
-            ++nxt_stone;
-            if (nxt_stone == stones.size()) {
-                break;
+// 이진 탐색을 이용.
+// 돌다리 최댓값이 건널 수 있는 사람의 최댓값을 의미.
+bool cross_stones(vector<int>& stones, int k, int people) {
+    int step = 0;
+    for (auto& e : stones) {
+        if (e < people) {
+            ++step;
+            if (step >= k) {
+                return false;
+            }
+        } else {
+            step = 0;
         }
-        if (nxt_stone - cur_stone > k) return false;
-        cur_stone = nxt_stone;
-        ++ans;
-        if (ans == 20)
-            return false;
     }
+    return true;
 }
 
 int solution(vector<int> stones, int k) {
-    vector<int> s(stones);
-    s.push_back(0);
-    
+
     int ans = 0;
-    while (true) {
-        if (!cross_stones(s, k)) {
-            break;
+    int st = 0;
+    int en = *max_element(stones.begin(), stones.end());
+    while (st <= en) {
+        int people = (st + en) / 2;
+        if (cross_stones(stones, k, people)) {
+            st = people + 1;
+            ans = max(ans, people);
+        } else {
+            en = people - 1;
         }
-        ++ans;
     }
+
     return ans;
 }

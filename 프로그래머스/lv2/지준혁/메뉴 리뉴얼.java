@@ -2,15 +2,17 @@ import java.util.*;
 
 class Solution {
     
-    TreeMap<String, Integer> map = new TreeMap<>();
+    Map<String, Integer> map = new HashMap<>();
     
     public String[] solution(String[] orders, int[] course) {
         
-        List<Map.Entry<String, Integer>> ans = new ArrayList<>();
+        List<Map.Entry<String, Integer>> menu = new ArrayList<>();
         
         for (int i = 0; i < course.length; ++i) {
             for (int j = 0; j < orders.length; ++j) {
-                dfs(0, orders[j], course[i], "", 0);
+                char[] chars = orders[j].toCharArray();
+                Arrays.sort(chars);
+                dfs(new StringBuilder(), course[i], 0, chars);
             }
             int maxValue = 1;
             for (var e : map.entrySet()) {
@@ -22,38 +24,35 @@ class Solution {
             if (maxValue != 1) {
                 for (var e : map.entrySet()) {
                     if (e.getValue() == maxValue) {
-                        ans.add(e);
+                        menu.add(e);
                     }
                 }
             }
             map.clear();
         }
-        ans.sort((e1, e2) -> e2.getValue().compareTo(e1.getValue()));
-        ans.sort(Map.Entry.comparingByKey());
         
-        List<String> list = new ArrayList<>();
-        for (var e : ans) {
-            list.add(e.getKey());
+        menu.sort((e1, e2) -> {
+            return e1.getKey().compareTo(e2.getKey());
+        });
+        
+        List<String> ans = new ArrayList<>();
+        for (var e : menu) {
+            ans.add(e.getKey());
         }
      
-        String[] answer = list.toArray(new String[0]);
-        return answer;
+        return ans.toArray(new String[0]);
     }
     
-    void dfs(int depth, String order, int digit, String menu, int st) {
-        if (depth == digit) {
-            map.put(menu, map.getOrDefault(menu, 0) + 1);
-            char[] chars = menu.toCharArray();
-            Arrays.sort(chars);
-            String reversed = new String(chars);
-            if (!menu.equals(reversed)) {
-                map.put(reversed, map.getOrDefault(reversed, 0) + 1);
-            }
+    void dfs(StringBuilder sb, int digit, int st, char[] chars) {
+        if (sb.length() == digit) {
+            map.put(sb.toString(), map.getOrDefault(sb.toString(), 0) + 1);
             return;
         }
         
-        for (int i = st; i < order.length(); ++i) {
-            dfs(depth + 1, order, digit, menu + order.charAt(i), i + 1);
+        for (int i = st; i < chars.length; ++i) {
+            sb.append(chars[i]);
+            dfs(sb, digit, i + 1, chars);
+            sb.deleteCharAt(sb.length() - 1);
         }
     }
 }

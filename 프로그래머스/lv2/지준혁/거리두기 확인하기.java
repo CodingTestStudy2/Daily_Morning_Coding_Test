@@ -16,6 +16,7 @@ class Solution {
 
         for (int i = 0; i < places.length; ++i) {
             par.clear();
+			q.clear();
             for (int j = 0; j < places[i].length; ++j) {
                 for (int k = 0; k < places[i][j].length(); ++k) {
                     if (places[i][j].charAt(k) == 'P') {

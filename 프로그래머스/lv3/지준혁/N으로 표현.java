@@ -1,8 +1,9 @@
 import java.util.*;
 
-// 테케 한개
 class Solution {
     public int solution(int N, int number) {
+        
+        if (number == N) return 1;
         
         List<Set<Integer>> dp = new ArrayList<>();
         

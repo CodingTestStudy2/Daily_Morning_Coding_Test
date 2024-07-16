@@ -23,8 +23,8 @@ class Solution {
     }
     
     int find(int x, int[] p) {
-	    if (p[x] < 0) return x;
-	    else return p[x] = find(p[x], p);
+	if (p[x] < 0) return x;
+	else return p[x] = find(p[x], p);
     }
     
     void unionByRank(int x, int y, int[] p) {

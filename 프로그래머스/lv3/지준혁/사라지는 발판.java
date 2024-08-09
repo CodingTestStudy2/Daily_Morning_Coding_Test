@@ -1,26 +1,35 @@
-// 가장 빠르게 승부가 결정난다면 서로 최적의 플레이로 만들어야 함 (-> 누가 이겼는지 구하는 게 아니고, 최적의 플레이 했을 때 움직인 횟수)
-// A가 도착한 곳에 B가 도착하면 바로 승부가 난다 -> 서로 최적의 플레이 아님.
-// A가 도착한 곳에 B가 도착하는 경우는 B가 다른 곳을 방문하지 못했을 경우만.
-    
-// 갈 수 있음 1, 갈 수 없음 0, 발판 없음 -1
-// 상대가 움직였던 곳으론 움직일 수 없음
-// 1. 이동하기 전에 현재 내 발판이 존재하는지 확인 (현재 위치가 -1이라면 상대방 승리)
-// 2. 이동하고 나서 이전 위치에 있는 발판 제거(1 -> -1)
-// 3. 이동할 수 없다면 상대가 있는 위치로 이동할 수 있는지 확인
-// 3-1: 이동하지 못했다면 상대방 승리
-// 3-2: 상대가 이동하지 못한다면 나의 승리. 상대가 이동했다면 나의 패배(나의 발판 -1)
-// 위의 나오는 여러가지 경우 중 가장 움직인 횟수가 적은 경우 반환, 최대 5*5 보드에서 게임 진행되므로 dfs(bactktracking)로 완전 탐색
+import java.util.*;
+
 class Solution {
 
-    public int solution(int[][] board, int[] aloc, int[] bloc) {
-        
-        int r = board.length;
-        int c = board[0].length;
-        System.out.println(r + " " + c);
-        boolean[][] isVisited = new boolean[r][c];
+	int[] dy = {-1, 0, 1, 0};
+	int[] dx = {0, 1, 0, -1};
+	
+	public int solution(int[][] board, int[] aloc, int[] bloc) {
+		int r = board.length;
+		int c = board[0].length;
+		return solve(aloc[0], aloc[1], bloc[0], bloc[1], r, c, board, new boolean[r][c]);
+	}
 
-        int ans = -1;
+	int solve(int cy, int cx, int oy, int ox, int r, int c, int[][] board, boolean[][] isVisited){
+		if (isVisited[cy][cx]) return 0;    
 
-        return ans;
-    }
+		int ret = 0;
+		for (int dir = 0; dir < 4; dir++){
+			int ny = cy + dy[dir];
+			int nx = cx + dx[dir];
+			if (ny < 0 || ny >= r || nx < 0 || nx >= c) continue;
+			if (isVisited[ny][nx] || board[ny][nx] == 0) continue;
+
+			isVisited[cy][cx] = true;
+			int val = solve(oy, ox, ny, nx, r, c, board, isVisited) + 1;
+			isVisited[cy][cx] = false;        
+
+			if (ret % 2 == 0 && val % 2 == 1) ret = val;
+			else if (ret % 2 == 0 && val % 2 == 0) ret = Math.max(ret, val);
+			else if (ret % 2 == 1 && val % 2 == 1) ret = Math.min(ret, val);
+		}
+		return ret;
+	}
 }
+

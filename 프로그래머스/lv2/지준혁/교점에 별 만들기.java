@@ -19,35 +19,34 @@ class Solution {
                 int D = line[j][1];
                 int F = line[j][2];
                 
-                double deltaY = A * D - B * C;
-                double deltaX1 = B * F - E * D;
-                double deltaX2 = E * C - A * F;
+                long deltaY = 1L * A * D - 1L * B * C;
+                long deltaX1 = 1L * B * F - 1L * E * D;
+                long deltaX2 = 1L * E * C - 1L * A * F;
                 if (deltaY == 0) continue; 
-                double x = deltaX1 / deltaY;
-                double y = deltaX2 / deltaY;
-                if (x == (int)x && y == (int)y) {
-                    meet.add(new int[]{(int)x, (int)y});
-                    minX = Math.min(minX, (int)x);
-                    maxX = Math.max(maxX, (int)x);
-                    minY = Math.min(minY, (int)y);
-                    maxY = Math.max(maxY, (int)y);
+
+                if (deltaX1 % deltaY == 0 && deltaX2 % deltaY == 0) {
+                    int x = (int) (deltaX1 / deltaY);
+                    int y = (int) (deltaX2 / deltaY);
+                    meet.add(new int[]{x, y});
+                    minX = Math.min(minX, x);
+                    maxX = Math.max(maxX, x);
+                    minY = Math.min(minY, y);
+                    maxY = Math.max(maxY, y);
                 }
             }
         }
         int xLen = maxX - minX + 1;
         int yLen = maxY - minY + 1;
-        char[][] board = new char[xLen][yLen];
-        for (int i = 0; i < xLen; ++i) 
+        char[][] board = new char[yLen][xLen];
+        for (int i = 0; i < yLen; ++i) 
             Arrays.fill(board[i], '.');
 
         for (var e : meet) {
-            int x = e[0] - minX;
-            int y = maxY - e[1];
-            board[x][y] = '*';
+            board[maxY - e[1]][e[0] - minX] = '*';
         }
 
-        String[] ans = new String[xLen];
-        for (int i = 0; i < xLen; ++i) {
+        String[] ans = new String[yLen];
+        for (int i = 0; i < yLen; ++i) {
             ans[i] = new String(board[i]);
         }
         return ans;

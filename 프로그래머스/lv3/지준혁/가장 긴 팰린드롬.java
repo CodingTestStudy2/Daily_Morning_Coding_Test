@@ -1,33 +1,29 @@
-// 시간 부족
-class Solution
-{
-    public int solution(String s)
-    {
-        int st = 0;
-        int en = s.length();
+class Solution {
+    public int solution(String s) {
+        int n = s.length();
         
-        int ans = 0;
-        while (en > 0) {
-            String str = s.substring(st, en);
-            if (isPalinDrome(str.toCharArray())) {
-                System.out.println(str);
-                ans = str.length();
+        int ans = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                if (isPalinDrome(s, i, j)) {
+                    int len = j - i + 1;
+                    if (ans < len) {
+                        ans = len;
+                    }
+                }
             }
-            --en;
         }
         return ans;
     }
-    boolean isPalinDrome(char[] s) {
-        int l = 0;
-        int r = s.length - 1;
-        
+    
+    boolean isPalinDrome(String s, int l, int r) {
         while (l <= r) {
-            if (s[l] == s[r]) {
+            if (s.charAt(l) == s.charAt(r)) {
                 ++l;
                 --r;
-            }
-            else
+            } else {
                 return false;
+            }
         }
         return true;
     }

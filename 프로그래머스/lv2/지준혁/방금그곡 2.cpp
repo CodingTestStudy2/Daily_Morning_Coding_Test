@@ -38,9 +38,14 @@ class Solution {
             }
             
             String gasa = convertSharp(sb.toString(), map);
-            System.out.println("gasa: " + gasa + " melody: " + melody);   
-            if (gasa.contains(melody) && ans.length() < gasa.length()) {
-                ans = info[2];
+            music.put(info[2], gasa);
+            if (gasa.contains(melody)) {
+                if (!ans.isEmpty()) {
+                    if (music.get(ans).length() < gasa.length())
+                        ans = info[2];
+                } else {
+                    ans = info[2];
+                }
             }
         }
         if (!ans.isEmpty())

@@ -9,7 +9,6 @@
 
 '''
 
-
 from collections import Counter, defaultdict
 
 def solution(a):
@@ -21,15 +20,25 @@ def solution(a):
     for i, n in enumerate(a):
         indexes[n].append(i)
     counts = sorted([(v,k) for k, v in indexes.items()], key=lambda x: -len(x[0]))
-    print(counts)
 
     ans = 0
     for indexes, num in counts:
-        indexes_set = set(indexes)
-        stack = []
+        if len(indexes) < ans:
+            continue
+        count = 0
         i = 0
-        while i<len(indexes):
-            if i in indexes~~~~~~~
+        while i < size - 1:
+            if (a[i] == num or a[i+1] == num) and a[i] != a[i+1]:
+                count += 1
+                i += 2
+            else:
+                i += 1
+        ans = max(ans, count)
+
+    return ans * 2
+
+
+
 
 
 

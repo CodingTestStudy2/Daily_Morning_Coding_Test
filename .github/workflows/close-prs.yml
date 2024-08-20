@@ -1,0 +1,18 @@
+name: Close stale PRs
+
+on:
+  schedule:
+    - cron: "0 1 06 * *"  # 매일 12:00 UTC에 실행
+
+jobs:
+  close_prs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close stale PRs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          prs=$(gh pr list --json number --jq '.[].number')
+          for pr in $prs; do
+            gh pr close $pr -c "Automatically closing stale PR."
+          done

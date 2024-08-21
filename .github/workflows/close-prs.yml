@@ -2,7 +2,7 @@ name: Close stale PRs
 
 on:
   schedule:
-    - cron: "0 1 20 * *"  # 매일 12:00 UTC에 실행(ㅁㄴㅇㄻㄴㅇㄹ)
+    - cron: "0 1 20 * *"  # 매일 12:00 UTC에 실행
 
 jobs:
   close_prs:

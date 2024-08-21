@@ -1,26 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def solution(s):
     answer = 1001
     if len(s) == 1: return 1

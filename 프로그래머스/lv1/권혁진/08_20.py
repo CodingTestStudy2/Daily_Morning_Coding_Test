@@ -1,3 +1,5 @@
+# https://school.programmers.co.kr/learn/courses/30/lessons/250125
+
 def solution(board, h, w):
     answer = 0
     directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]

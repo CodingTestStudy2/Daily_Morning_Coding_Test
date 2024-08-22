@@ -6,10 +6,11 @@ on:
   workflow_dispatch:
 
 permissions:
+  issues: write
   pull-requests: write
 
 jobs:
-  close_prs:
+  close_prs_issues:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

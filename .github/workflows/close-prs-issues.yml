@@ -1,4 +1,4 @@
-name: Close stale PRs
+name: Close stale PRs, ISSUEs
 
 on:
   schedule:
@@ -11,14 +11,20 @@ permissions:
 jobs:
   close_prs:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Close stale PRs
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh pr list --json number --jq '.[].number' | while read pr; do
             gh pr close $pr -c "Automatically closing stale PR."
           done
+      - name: Close stale Issues
+        run: |
+          gh issue list --state open --json number --jq '.[].number' | while read -r issue; do
+            gh issue close $issue -c "Automatically closing stale issue."
+          done
+

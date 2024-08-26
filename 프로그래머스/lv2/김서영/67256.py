@@ -1,7 +1,3 @@
-
-"""
-
-"""
 def solution(numbers, hand):
     answer = ''
     hand = hand[0].upper()
@@ -18,22 +14,17 @@ def solution(numbers, hand):
     
     l, r = '*', '#'
     for number in numbers:
-        if number in [1, 4, 7]: 
-            answer += 'L'
-        elif number in [3, 6, 9]: 
-            answer += 'R'
+        if number in [1, 4, 7]: answer += 'L'
+        elif number in [3, 6, 9]: answer += 'R'
         else:
-            if len(answer) == 0: 
-                answer += hand
-                pass
-            l_distance = distance_getter(str(number), l)
-            r_distance = distance_getter(str(number), r)
-            if l_distance < r_distance:
-                answer += 'L'
-            elif l_distance > r_distance:
-                answer += 'R'
+            if len(answer) == 0: answer += hand
             else:
-                answer += hand
+                l_distance = distance_getter(str(number), l)
+                r_distance = distance_getter(str(number), r)
+                if l_distance < r_distance: answer += 'L'
+                elif l_distance > r_distance: answer += 'R'
+                else: answer += hand
+                
         if answer[-1] == 'L': l = str(number)
         else: r = str(number)
     return answer

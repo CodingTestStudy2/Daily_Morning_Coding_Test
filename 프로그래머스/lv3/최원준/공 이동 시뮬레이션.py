@@ -9,6 +9,47 @@
 
 '''
 
+def solution(n, m, x, y, queries):
+    min_x, max_x = x, x
+    min_y, max_y = y, y
+
+    queries = queries[::-1]
+    for command, dx in queries:
+        if command == 0:  # 왼쪽 이동
+            max_y = min(m - 1, max_y + dx)
+            if min_y != 0:
+                min_y = min_y + dx
+            min_y = max(0, min_y)
+        elif command == 1:  # 오른쪽 이동
+            min_y = max(0, min_y - dx)
+            if max_y != m - 1:
+                max_y = max_y - dx
+            max_y = min(m - 1, max_y)
+        elif command == 2:  # 위로 이동
+            max_x = min(n - 1, max_x + dx)
+            if min_x != 0:
+                min_x = min_x + dx
+            min_x = max(0, min_x)
+        elif command == 3:  # 아래로 이동
+            min_x = max(0, min_x - dx)
+            if max_x != n - 1:
+                max_x = max_x - dx
+            max_x = min(n - 1, max_x)
+
+        # 범위가 유효하지 않은 경우
+        if min_x > max_x or min_y > max_y:
+            return 0
+
+    return (max_x - min_x + 1) * (max_y - min_y + 1)
+
+
+
+
+
+
+
+# 시간초과
+
 from collections import defaultdict
 
 def solution(n, m, x, y, queries):

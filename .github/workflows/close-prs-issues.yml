@@ -1,4 +1,4 @@
-name: Close stale PRs, ISSUEs
+name: Merge or Close stale PRs, ISSUEs
 
 on:
   schedule:

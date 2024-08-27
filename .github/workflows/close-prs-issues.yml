@@ -30,9 +30,6 @@ jobs:
               gh pr close $pr --comment "Automatically closing stale PR #$pr due to merge failure."
             fi
           done
-      - name: Push changes to main branch
-        run: |
-          git push origin main
       - name: Close stale Issues
         run: |
           gh issue list --state open --json number --jq '.[].number' | while read -r issue; do

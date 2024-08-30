@@ -1,23 +1,26 @@
 class Solution {
-    fun calcTotalDays(temp: List<String>): Int {
-        return temp[0].toInt() * 12 * 28 + temp[1].toInt() * 28 + temp[2].toInt()
+    fun calcTotalDays(date: List<Int>): Int {
+        return date[0] * 12 * 28 + date[1] * 28 + date[2]
     }
     
     fun solution(today: String, terms: Array<String>, privacies: Array<String>): List<Int> {
         val answer = mutableListOf<Int>()
-        val todayDays = calcTotalDays(today.split("."))
+        
+        val todayDays = calcTotalDays(
+            today.split(".").map{ it.toInt() }
+        )
         
         val hash = hashMapOf<String, Int>() 
         for(term in terms){
             val temp = term.split(" ")
-            val type = temp[0]
-            val month = temp[1].toInt()
-            hash[type] = month
+            hash[temp[0]] = temp[1].toInt()
         }
         
         privacies.forEachIndexed { idx, privacy -> 
             val temp = privacy.split(" ")
-            val collectDays = calcTotalDays(temp[0].split("."))
+            val collectDays = calcTotalDays(
+                temp[0].split(".").map{ it.toInt() }
+            )
             val termType = temp[1]
             
             // 수집 일자 + 약관의 유효 기간

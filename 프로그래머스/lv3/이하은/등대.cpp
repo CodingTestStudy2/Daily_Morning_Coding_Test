@@ -15,50 +15,42 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> pii;
 
-// 양방향, 완전 연결 그래프
-// 연결된 등대 중에 적어도 하나는 ON 
-// 켜둬야 하는 등대 개수의 최솟값 리턴
-
-// 그리디하게 연결된 간선 개수가 많은 것부터 ON
-// 간선 개수가 동일한 경우, 인접 노드가 OFF 된 것부터 ON
-
 const int MAX = 100001;
 vector<int> graph[MAX];
+bool light[MAX];
+int answer = 0;
+
+void dfs(int now, int parent){
+    for(int i = 0; i < graph[now].size(); i++){
+        int child = graph[now][i];
+        
+        // 잎 노드까지 온 경우 (1 -> 2 -> 3 -> 2)
+        if(child == parent){
+            // 불을 켜지 않고 다른 자식 노드 탐색으로 넘어감.
+            // 바로 리턴하면 안 된다!!
+            continue;
+        }
+        
+        // 잎 노드까지 재귀 호출 
+        dfs(child, now);
+        
+        // 자식, 현재 노드 중에 현재 노드부터 불 켠다. 
+        if(!light[child] && !light[now]){
+            light[now] = true;
+            answer++;
+        }
+    }
+}
 
 int solution(int n, vector<vector<int>> lighthouse) {
-    int answer = 0;
-    
+    // 양방향으로 연결 
     for(auto v: lighthouse){
         graph[v[0]].push_back(v[1]);
         graph[v[1]].push_back(v[0]);
     }
     
-    vector<pii> edges;
-    for(int i = 1; i <= n; i++){
-        edges.push_back({graph[i].size(), i});
-    }
-    
-    // 간선 개수 많은 순으로 정렬 (최소 1개)
-    sort(edges.begin(), edges.end());
-    
-    // 각 노드의 ON/OFF 여부는 해시에 저장 
-    unordered_map<int, int> um;
-    um[edges[0].second] = 1; 
-    
-    int prevCnt = edges[0].first;
-    for(int i = 1; i < edges.size(); i++){
-        if(prevCnt == edges[i].first){
-            // 인접 노드 검사해서 
-            
-            // 켜진 등대가 아예 없는 것부터 ON 
-            
-            // 모든 노드의 인접 노드가 
-            // 적어도 하나 켜져있음을 확인한다.  
-            
-        }else{
-            answer++;
-        }
-    }
+    // 루트 노드 1번부터 탐색 시작 
+    dfs(1, 1);
     
     return answer;
 }

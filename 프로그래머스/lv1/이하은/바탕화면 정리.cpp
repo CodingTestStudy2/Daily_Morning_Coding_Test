@@ -15,8 +15,6 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> pii;
 
-const int MAX = 51;
-
 // x 좌표의 최소a 최대c
 // y 좌표의 최소b 최대d
 // 시작점 (a, b) 끝점 (c, d)

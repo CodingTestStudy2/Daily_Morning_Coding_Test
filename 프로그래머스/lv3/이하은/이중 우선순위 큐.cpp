@@ -19,16 +19,17 @@ vector<int> solution(vector<string> operations) {
     vector<int> answer;
     multiset<int> ms;
     
-    for(int i = 0; i < operations.size(); i++){
+    for(int i = 0; i < operations.size(); i++){ // O(N)
         char cmd = operations[i][0];
         int num = stoi(operations[i].substr(2));
         
         if(cmd == 'I'){
-            // 숫자 삽입 
+            // O(logN)
             ms.insert(num);
         }else{
             if(ms.empty()) continue;
 
+            // O(logN)
             if(num == 1){ // 최댓값 삭제 
                 ms.erase(prev(ms.end()));
             }else{ // 최솟값 삭제

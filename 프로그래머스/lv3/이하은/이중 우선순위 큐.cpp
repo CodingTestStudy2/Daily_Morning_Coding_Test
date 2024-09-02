@@ -27,14 +27,12 @@ vector<int> solution(vector<string> operations) {
             // 숫자 삽입 
             ms.insert(num);
         }else{
+            if(ms.empty()) continue;
+
             if(num == 1){ // 최댓값 삭제 
-                if(!ms.empty()){
-                    ms.erase(prev(ms.end()));
-                 }
+                ms.erase(prev(ms.end()));
             }else{ // 최솟값 삭제
-                if(!ms.empty()){
-                    ms.erase(ms.begin());
-                }
+                ms.erase(ms.begin());
             }
         }
     }

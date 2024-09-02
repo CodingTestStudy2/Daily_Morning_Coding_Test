@@ -15,12 +15,9 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> pii;
 
-const int MAX = 51;
 int N, M;
-
 vector<string> g_park;
 vector<string> g_routes;
-bool visited[MAX];
 int dx[] = {0, 0, 1, -1};
 int dy[] = {1, -1, 0, 0};
 
@@ -68,6 +65,8 @@ pii moveDog(int x, int y){
         pii nextPos = getNextPos(x, y, dirIdx, dist);
         x = nextPos.first;
         y = nextPos.second;
+        
+        cout << x << " " << y << endl;
     }
     
     return {x, y};

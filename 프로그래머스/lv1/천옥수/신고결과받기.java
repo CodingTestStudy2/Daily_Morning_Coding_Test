@@ -6,8 +6,6 @@ class Solution {
         for(int idx = 0; idx < id_list.length; idx++) {
             idIdxMap.put(id_list[idx], idx);
         }
-        // System.out.println(idIdxMap.toString());
-        //
         Map<String, Set<Integer>> bannedMap = new HashMap<>();
 
         for(String sr: report){
@@ -16,11 +14,12 @@ class Solution {
 
             // 중복을 해결해야하고, 그러면서고, key 값으로 조회가 가능해야함
             if(!bannedMap.containsKey(report_array[1])){
-                bannedMap.put(report_array[1], new HashSet(idIdxMap.get(report_array[0])));
+                Set<Integer> newSet= new HashSet<>();
+                newSet.add(idIdxMap.get(report_array[0]));
+                bannedMap.put(report_array[1], newSet);
             } else {
                 Set oldSet = bannedMap.get(report_array[1]);
                 oldSet.add(idIdxMap.get(report_array[0]));
-                // System.out.println(oldSet.toString());
             }
         }
 
@@ -28,16 +27,12 @@ class Solution {
         int[] answer = new int[id_list.length];
         for (Map.Entry<String, Set<Integer>> entry : bannedMap.entrySet()) {
             Set<Integer> reporters = entry.getValue();
-            System.out.println(entry.getKey());
-            System.out.println(reporters);
             if (reporters.size() >= k) {
-                // If the number of reporters is >= k, notify each reporter
                 for (int idx : reporters) {
                     answer[idx]++;
                 }
             }
         }
-
         return answer;
 
     }

@@ -41,9 +41,11 @@ int solution(vector<vector<int>> tri) {
             }else {
                 dp[i][j] += max(dp[i - 1][j], dp[i - 1][j - 1]) + tri[i][j];
             }
-            
-            answer = max(answer, dp[i][j]);
         }
+    }
+    
+    for(int i = 0; i < n; i++){
+        answer = max(answer, dp[n - 1][i]);
     }
     
     return answer;

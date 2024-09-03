@@ -15,93 +15,40 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> pii;
 
-// s <= x <= e 중에서 
-// 억억단에서 가장 '많이' 등장한 수
-// 가장 많이 등장한 수가 여러 개면, 그 중 가장 '작은' 수
-
-/*
-크기는 최대 500만 
-억억단에서 특정 숫자가 등장한 횟수 구하는 방법
-
-1 -> 1번 
-2 3 5 7 -> 소수여서 2번 
-4 / 1 * 4 / 2 * 2 / 4 * 1 -> 3 
-6 / 1 * 6 / 2 * 3 / 3 * 2 / 6 * 1 -> 4 
-8 / 1 * 8 / 2 * 4 / 4 * 2 / 8 * 1 -> 4 
-
-9 / 1 * 9 / 3 * 3 
-16 / 1 * 16 / 2 * 8 / 4 * 4 
-*/
-
-map<int, vector<int>> m; // 등장 횟수, 해당하는 숫자들 
-
-bool isPrime(int x) {
-    if (x < 2) return false;
-    for (int i = 2; i * i <= x; i++) {
-        if (x % i == 0) {
-            return false; 
-        }
-    }
-    return true;
-}
-
-bool isSquare(int n) {
-    int sqrtN = sqrt(n);
-    return sqrtN * sqrtN == n;
-}
-
 vector<int> solution(int e, vector<int> starts) {
     vector<int> answer;
-    int minStart = *min_element(starts.begin(), starts.end());
     
-    // minStart <= x <= e 범위의 숫자에 대해 
-    // 억억단에 나타난 횟수 구해서 저장해두기 
-    int cnt = 0;
-    for(int x = minStart; x <= e; x++){ // N 
-        if(x == 1){
-            cnt = 1;
-            m[cnt].push_back(x);
-            continue;
+    // 억억단에서 특정 숫자의 등장 횟수 구하기 (약수 개수)
+    vector<int> arr(e + 1, 0);
+    for(int i = 1; i <= e; i++){
+        for(int j = i; j <= e; j += i){
+            arr[j]++;
         }
-        
-        if(isPrime(x)){
-            cnt = 2;
-            m[cnt].push_back(x);
-            continue;
-        }
-        
-        for(int i = 1; i * i <= x; i++){ // 루트 N 
-            cnt++;
-        }
-        
-        if(isSquare(x)){
-            cnt = (cnt - 1) * 2 + 1;
-        }else{
-            cnt *= 2;
-        }
-        
-        m[cnt].push_back(x);
     }
     
-    // s <= x <= e 범위의 숫자 중에서 
-    // 억억단에 가장 많이 등장한 숫자 
-    // 등장 횟수가 같으면, 가장 작은 숫자 
-    for(auto s: starts){
-        bool found = false;
+    vector<int> dp(e + 1, 0);
+    int minStart = *min_element(starts.begin(), starts.end());
+    
+    // dp[i]: [i, e] 범위에서 가장 많이 등장한 수 (minStart <= i <= e)
+    // [e, e]
+    // [e - 1, e]
+    // ...
+    // [minStart, e]
+    // start 위치가 뒤에서 앞으로 이동하며 범위가 점점 넓어짐. 
+    
+    dp[e] = e;
+    for(int i = e - 1; i >= minStart; i--){
+        // 바로 이전 범위 내에서 가장 많이 등장한 숫자보다
+        // 현재 숫자의 등장 횟수가 더 크거나 같은 경우 dp 테이블 갱신
+        // 등호를 포함시켜서 dp 테이블에 더 작은 숫자 저장하도록 
+        if(arr[i] >= arr[dp[i + 1]]) dp[i] = i; 
         
-        // map의 뒤쪽부터 순회 (등장 횟수가 많은 순으로)
-        for(auto it = m.rbegin(); it != m.rend(); ++it){
-            for(auto x: it->second){
-                // 숫자 범위 체크 
-                if(x >= s && x <= e){
-                    found = true;
-                    answer.push_back(x);
-                    break;
-                }
-            }
-            
-            if(found) break;
-        }
+        // 그렇지 않으면, 바로 이전 범위 내의 최대 등장 숫자 유지
+        else dp[i] = dp[i + 1];
+    }
+    
+    for(auto s: starts){
+        answer.push_back(dp[s]);
     }
     
     return answer;

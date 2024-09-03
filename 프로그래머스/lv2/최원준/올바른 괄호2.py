@@ -15,8 +15,6 @@ class Solution {
     boolean solution(String s) {
         Map<Character, Character> map = new HashMap<>();
         map.put(')', '(');
-        map.put(']', '[');
-        map.put('}', '{');
         
         Stack<Character> stack = new Stack<>();
         for (Character c : s.toCharArray()) {

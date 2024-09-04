@@ -35,22 +35,24 @@ int solution(vector<int> bandage, int health, vector<vector<int>> attacks) {
         if(m.find(time) != m.end()){
             curEnergy -= m[time];
             contiSuccessTime = 0;
-            continue;
-        }
-        
-        if(curEnergy + x <= health){
-            curEnergy += x;
+
+            // for문 돌다가 0 이하가 되면 바로 리턴 (오답 포인트 1)
+            if(curEnergy <= 0) return -1;
+            else continue;
         }
     
+        curEnergy += x;
         contiSuccessTime++;
         
         if(contiSuccessTime == t){
-            if(curEnergy + y <= health){
-                curEnergy += y;
-            }else{
-                curEnergy = health;
-            }
+            curEnergy += y;
             contiSuccessTime = 0;
+        }
+        
+        // 마지막에 한꺼번에 최댓값 처리 
+        // 반드시 x, y만큼 말고도 부분적으로도 체력 증가할 수 있음. (오답 포인트 2)
+        if(curEnergy > health){
+            curEnergy = health;
         }
     }
     

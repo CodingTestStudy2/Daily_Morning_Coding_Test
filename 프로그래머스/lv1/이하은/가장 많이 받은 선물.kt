@@ -39,6 +39,7 @@ class Solution {
         val candidates = MutableList(N) { 0 }
         for(i in arr.indices){
             for(j in arr[i].indices){
+                // 같은 케이스에 대해 중복 연산 방지 
                 if(i > j) continue
                 
                 // 대각선 방향으로 선물 개수 비교 

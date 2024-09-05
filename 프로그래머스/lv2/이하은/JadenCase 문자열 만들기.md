@@ -1,3 +1,6 @@
+## 구현 
+
+```kotlin
 class Solution {
     fun solution(input: String): String {
         var answer = ""
@@ -35,3 +38,14 @@ class Solution {
         return answer
     }
 }
+```
+
+## Short Code
+
+```kotlin
+class Solution {
+    fun solution(s: String): String {
+        return s.toLowerCase().split(" ").joinToString(" "){ it.capitalize() }
+    }
+}
+```

@@ -1,4 +1,4 @@
-## 구현 
+# 반복문으로 구현 
 
 ```kotlin
 class Solution {
@@ -40,12 +40,29 @@ class Solution {
 }
 ```
 
-## Short Code
+# split, map, joinToString
+
+## capitalize() - v1.5부터 deprecated
 
 ```kotlin
 class Solution {
-    fun solution(s: String): String {
-        return s.toLowerCase().split(" ").joinToString(" "){ it.capitalize() }
-    }
+    fun solution(input: String) = input.lowercase().split(" ").map {
+        it.capitalize()
+    }.joinToString(" ")
+}
+```
+
+## uppercaseChar() 
+
+```kotlin 
+class Solution {
+    fun solution(input: String) = input.split(" ").map {
+        if(it.isEmpty()) it
+        else{
+            var lowerWord = it.lowercase().toCharArray()
+            lowerWord[0] = lowerWord[0].uppercaseChar() // 문자 하나만 대문자로 변경 
+            String(lowerWord) // CharArray to String 
+        }
+    }.joinToString(" ")
 }
 ```

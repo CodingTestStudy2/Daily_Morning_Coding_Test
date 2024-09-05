@@ -20,7 +20,7 @@ class Solution {
         }
         
         val score = mutableMapOf<String, Int>()
-        val arr: MutableList<MutableList<Int>> =  MutableList(N){ MutableList(N) { 0 } }
+        val arr = MutableList(N){ MutableList(N) { 0 } }
         
         for(gift in gifts){
             val temp = gift.split(" ")
@@ -34,27 +34,32 @@ class Solution {
             score[giveName] = (score[giveName] ?: 0) + 1
             score[takeName] = (score[takeName] ?: 0) - 1
         }
-        
-        // 최종 계산 
-        // 대각선 방향으로 선물 개수 비교 
+    
+        // 최종 계산
         val candidates = MutableList(N) { 0 }
         for(i in arr.indices){
             for(j in arr[i].indices){
+                if(i > j) continue
+                
+                // 대각선 방향으로 선물 개수 비교 
                 if(arr[i][j] > arr[j][i]){
-                    
-                }else if(arr[i][j] > arr[j][i]){
-                    
+                    candidates[i]++
+                }else if(arr[i][j] < arr[j][i]){
+                    candidates[j]++
                 }else{
-                    // 선물 지수 비교 
-                    if(score[] > score[]){
-                        
-                    }else{
-                        
+                    // 선물 지수 비교
+                    val first = score[friends[i]] ?: 0
+                    val second = score[friends[j]] ?: 0
+                    
+                    if(first > second){
+                        candidates[i]++
+                    }else if(first < second){
+                        candidates[j]++
                     }
                 }
             }
         }
         
-        return answer
+        return candidates.maxOrNull() ?: 0
     }
 }

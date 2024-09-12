@@ -1,22 +1,20 @@
+import java.util.*;
 
 class Solution {
 
     public int solution(String s) {
 
         char[] ch = s.toCharArray();
-        int lt = 0;
-        int rt = 1;
+        Stack<Character> stack = new Stack<>();
 
-        while(lt <= rt) {
-            if (ch[lt] != ch[rt]) {
-                lt++;
-                rt++;
+        for (int i = 0; i < ch.length; i++) {
+            if (stack.isEmpty() || stack.peek() != ch[i]) {
+                stack.push(ch[i]);
             } else {
-
-                for (int i = rt + 1; i < ch.length; i++) {
-                    ch[i-2] = ch[i];
-                }
+                stack.pop();
             }
         }
+        if(stack.isEmpty()) return 1;
+        return 0;
     }
 }

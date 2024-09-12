@@ -10,28 +10,25 @@
 '''
 
 
-import sys
-#sys.setrecursionlimit(1000000)
-input = sys.stdin.readline
+'''
+import java.util.*;
+class Solution {
+    public int solution(int n) {
+        var sieve = new boolean[n+1];
+        var start = 2;
 
-def solution():
-
-    return 1
-
-# n = int(input().rstrip())
-#
-# n, m = list(map(int, input().split()))
-# a = [c for c in input().strip()]
-#
-# s = input().rstrip()
-
-# arr = list(map(int, input().strip().split()))
-# integer_list = [int(num) for num in input().split()]
-# dp = [[0 for _ in range(n)] for _ in range(n)]
-# dp = [[0 for j in range(n)] for i in range(n)]
-# grid = [list(input().rstrip()) for _ in range(n)] # "aaa" "bbb"
-# grid = list(list(map(int, input().split())) for _ in range(n)) # 0 0 0 0", "0 0 0 0
-
-print(solution())
-
-
+        var m = (int) Math.sqrt(n+1);
+        for (int i = 2; i <= m; i++) {
+            if (!sieve[i]) {
+                for (int j = i + i; j < n+1; j += i) {
+                    sieve[j] = true;
+                }
+            }
+        }
+        var count = 0;
+        for (int i = start; i < n+1; i++) {
+            if (!sieve[i]) count++;
+        }
+        return count;
+    }
+}'''

@@ -1,25 +1,23 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/12971
-# 틀림..!
+# 수정..!
 def solution(sticker):
-    answer = 0    
-    # 퐁당퐁당 x
-    # 처음 o, 마지막 x, 마지막 o, 처음 x
-    
+    answer = 0
+    n = len(sticker)
     if len(sticker) == 1:
         return sticker[0]
     
-    def calc_sticker_num(arr):
-        n = len(arr)
-        dp = [0] * n
-        dp[0] = arr[0]
-        dp[1] = min(arr[0], arr[1])
-        
-        for i in range(2, len(arr)):
-            dp[i] = max(dp[i-2] + arr[i], dp[i-1])
-        return dp[-1] # 마지막 원소(총합)
-    # 첫번째 o (마지막 x)
-    case1 = calc_sticker_num(sticker[:-1])
-    # 첫번째 x (마지막 o)
-    case2 = calc_sticker_num(sticker[1:])
+    # 첫번째 선택한 경우
+    dp1 = [0] * n
+    dp1[0] = sticker[0]
+    dp1[1] = max(sticker[0], sticker[1])
+    for i in range(2, n-1):
+        dp1[i] = max(dp1[i-1], dp1[i-2]+sticker[i])
     
-    return max(case1, case2)
+    # 첫번째 선택 안한 경우
+    dp2 = [0] * n
+    dp2[0] = 0
+    dp2[1] = sticker[1]
+    for i in range(2, n):
+        dp2[i] = max(dp2[i-1], dp2[i-2]+sticker[i])        
+
+    return max(dp1[n-2], dp2[n-1])

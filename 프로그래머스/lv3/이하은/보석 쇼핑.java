@@ -23,7 +23,8 @@ class Solution {
         
         for(int right = 0; right < gems.length; right++){
             // right 범위 늘리기
-            hash.put(gems[right], hash.getOrDefault(gems[right], 0) + 1);
+            String rightGem = gems[right];
+            hash.put(rightGem, hash.getOrDefault(rightGem, 0) + 1);
             
             // 모든 보석 종류를 담았을 때마다 
             while(allTypes.size() == hash.size()){

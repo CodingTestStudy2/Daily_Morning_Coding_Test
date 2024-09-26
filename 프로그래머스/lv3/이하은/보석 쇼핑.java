@@ -4,46 +4,46 @@
 N <= 10만 (N^2 불가) 
 */
 import java.util.*;
-import javafx.util.Pair;
 
 class Solution {
     public int[] solution(String[] gems) {
         int[] answer = new int[2];
         
-        // Set으로 중복 제거 (종류 파악)
-        Set<String> allTypes = new HashSet<>();
+        // Set으로 보석 종류 파악 
+        HashSet<String> allTypes = new HashSet<>();
         for(String name: gems){
             allTypes.add(name);
         }
         
-        ArrayList<Pair<Integer, Integer>> candidates = new ArrayList<>();
-        
-        int left = 0, right = 0;
+        int left = 0;
         int minLen = Integer.MAX_VALUE;
         
-        while(left < gems.length){
-            if(right == gems.length - 1){
+        // 투포인터 범위에 따라, 보석 종류별 개수 갱신
+        HashMap<String, Integer> hash = new HashMap<>();
+        
+        for(int right = 0; right < gems.length; right++){
+            // right 범위 늘리기
+            hash.put(gems[right], hash.getOrDefault(gems[right], 0) + 1);
+            
+            // 모든 보석 종류를 담았을 때마다 
+            while(allTypes.size() == hash.size()){
+                // 최소 범위 갱신 
+                if(minLen > right - left){
+                    minLen = right - left;
+                    answer[0] = left + 1;
+                    answer[1] = right + 1;
+                }
+                
+                // right 고정, left 늘리기 (전체 범위 감소)
+                String leftGem = gems[left];
+                Integer leftCnt = hash.get(leftGem);
+                hash.put(leftGem, leftCnt - 1);
+                
+                if(hash.get(leftGem) == 0){
+                    hash.remove(leftGem);
+                }
+                
                 left++;
-                //System.out.println(left + " " + right);
-            }
-            
-            Set<String> temp = new HashSet<>();
-            for(int i = left; i <= right; i++){
-                temp.add(gems[i]);
-            }
-            
-            if(allTypes.size() == temp.size() && 
-               minLen > right - left){
-                minLen = right - left;
-                
-                answer[0] = left + 1;
-                answer[1] = right + 1;
-                
-                System.out.println(answer[0] + " " + answer[1]);
-            }
-            
-            if(right < gems.length - 1){
-                right++; // 최대 n-1까지만 증가
             }
         }
         

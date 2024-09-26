@@ -26,7 +26,7 @@ class Solution {
             String rightGem = gems[right];
             hash.put(rightGem, hash.getOrDefault(rightGem, 0) + 1);
             
-            // 모든 보석 종류를 담았을 때마다 
+            // 모든 보석 종류를 담을 때마다 
             while(allTypes.size() == hash.size()){
                 // 최소 범위 갱신 
                 if(minLen > right - left){

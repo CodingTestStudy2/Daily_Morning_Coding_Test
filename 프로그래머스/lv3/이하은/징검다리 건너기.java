@@ -38,11 +38,18 @@ class Solution {
         
         return ans;
     }
-    
-    // 니니즈 친구가 x명일 때 
-    // 연속된 0의 개수 < k 
+
+    /* 
+        징검다리 건너려고 시도하는 친구 수가 x명일 때
+        연속된 0의 개수 < 건너뛸 수 있는 최대 칸수 k
+        
+        x = 3 | 0 2 3 1 0 0 2 0 3 0 -> true 
+        x = 4 | 0 1 2 0 0 0 1 0 2 0 -> false 
+        
+        x > stones[i] -> cnt++ (연속된 0의 개수)
+    */
     boolean decision(int[] stones, int x, int k){        
-        int cnt = 0;
+        int cnt = 0; 
         
         for(int i = 0; i < stones.length; i++){
             if(stones[i] < x) cnt++;

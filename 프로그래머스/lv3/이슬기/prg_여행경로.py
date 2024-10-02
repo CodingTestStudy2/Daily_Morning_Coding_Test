@@ -34,3 +34,39 @@ def solution(tickets):
     #print("ddd", road)
     
     return road
+
+'''
+두번째 풀이
+'''
+
+def solution(tickets):
+    n = len(tickets)
+
+    tickets.sort(key=lambda x: (x[0], x[1]))
+    
+    def dfs(visited, x, cnt, road):
+        if cnt == n+1:
+            return road
+        
+        for t in range(n):
+            if tickets[t][0] == road[cnt-1] and not visited[t]:
+                visited[t] = True
+                road[cnt] = tickets[t][1]
+                
+                result = dfs(visited, t, cnt+1, road)
+                if result:
+                    return result
+                
+                visited[t] = False
+        return None
+    
+    for start in range(n):
+        if tickets[start][0] == "ICN":
+            visited = [False] * n
+            road = [""] * (n + 1)
+            road[0], road[1] = "ICN", tickets[start][1]
+            visited[start] = True
+            
+            result = dfs(visited, start, 2, road)
+            if result:
+                return result

@@ -23,7 +23,7 @@ class Solution {
         
         while(waitQ.isNotEmpty() || readyQ.isNotEmpty()){
             // 현재 시간 >= 작업 요청 시간 
-            // 대기 큐에 있던 작업을 레디 큐로 이동시켜 작업 처리 
+            // 대기 큐에 있던 작업을 레디 큐로 이동시키기 
             while(waitQ.isNotEmpty() &&
                     elapsedTime >= waitQ.peek().reqTime){
                 readyQ.offer(waitQ.poll())

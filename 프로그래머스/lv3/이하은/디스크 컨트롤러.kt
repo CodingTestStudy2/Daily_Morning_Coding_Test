@@ -2,38 +2,51 @@ import java.util.*
 
 /*
 처리 시간 = (요청부터 시작까지 대기 시간) + (작업 소요 시간) 
--> 평균 처리시간 최소화 (소수점 이하 버림)
+-> 평균 처리 시간 최소화 (소수점 이하 버림)
 
-작업 시간이 짧은 것부터 처리 (SJF)
-작업 소요 시간 순으로 오름차순 정렬 
-
-대기 0, 작업 3
-대기 2-3, 작업 6 
-대기 1-9, 작업 9 
--> 요청을 보내고 처음 시작할 때까지 걸린 시간 
+기본적으로 작업 요청 순서대로 처리하다가 (FCFS)
+중간에 여러 작업들이 요청 들어오면 
+소요 시간이 작은 것부터 우선 처리 (SJF)
 */
 class Solution {
     fun solution(jobs: Array<IntArray>): Int {
-        var totalTime = 0
+        val waitQ = PriorityQueue<Job>(compareBy { it.reqTime })
+        val readyQ = PriorityQueue<Job>(compareBy { it.duration })
         
-        // 작업 소요 시간 순으로 오름차순 정렬
-        jobs.sortBy { job -> job[1] }
+        // 모든 작업을 대기 큐에 삽입 
+        jobs.forEach {
+            waitQ.offer(Job(it[0], it[1]))
+        }
         
-        // 총 처리 시간 계산
-        for(i in jobs.indices){
-            // 이전 작업들의 누적 소요 시간 
-            var prevTaskTimes = 0
-            for(j in 0 until i){
-                prevTaskTimes += jobs[j][1]
+        var turnaroundTime = 0
+        var elapsedTime = 0
+        
+        while(waitQ.isNotEmpty() || readyQ.isNotEmpty()){
+            // 현재 시간 >= 작업 요청 시간 
+            // 대기 큐에 있던 작업을 레디 큐로 이동시켜 작업 처리 
+            while(waitQ.isNotEmpty() &&
+                    elapsedTime >= waitQ.peek().reqTime){
+                readyQ.offer(waitQ.poll())
             }
             
-            totalTime += if(prevTaskTimes > 0){
-                (prevTaskTimes - jobs[i][0]) + jobs[i][1]
-            }else{
-                jobs[i][1]
+            if(readyQ.isNotEmpty()){
+                // 작업 소요 시간이 작은 것부터 우선 처리 
+                val (reqTime, duration) = readyQ.poll()
+                elapsedTime += duration
+                turnaroundTime += (elapsedTime - reqTime)
+            }
+            // 첫번째 작업의 요청 시간이 0보다 큰 경우 
+            // elapsedTime = 0 < waitQ.peek().reqTime
+            else if(waitQ.isNotEmpty()){
+                elapsedTime = waitQ.peek().reqTime
             }
         }
         
-        return (totalTime / jobs.size).toInt()
+        return turnaroundTime / jobs.size 
     }
+    
+    data class Job(
+        val reqTime: Int,
+        val duration: Int
+    )
 }

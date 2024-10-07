@@ -26,4 +26,13 @@ class Solution {
 
 '''
 
-
+def solution(sequence):
+    pos = neg = 0
+    ans = 0
+    mul = 1;
+    for seq in sequence:
+        pos = max(pos + seq * mul, seq * mul)
+        neg = max(neg + seq * -mul, seq * -mul)
+        ans = max(ans, pos, neg)
+        mul *= -1
+    return ans

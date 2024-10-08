@@ -46,27 +46,26 @@ class Solution {
                     
                     if (road.arrow == -1) {
                         distance[nx][ny] = road.cost+100;
-                        corner[road.x][road.y] = road.cnt;
+                        corner[nx][ny] = road.cnt;
                         q.offer(new Road(nx, ny, road.cost+100, i, road.cnt));
                     } else if (road.arrow == i && road.cost+100 <= distance[nx][ny]) {
                         distance[nx][ny] = road.cost+100;
-                        corner[road.x][road.y] = road.cnt;
+                        corner[nx][ny] = road.cnt;
                         q.offer(new Road(nx, ny, road.cost+100, i, road.cnt));
                     } else if (road.arrow != i && road.cost+600 <= distance[nx][ny]) {
                         distance[nx][ny] = road.cost+600;
-                        corner[road.x][road.y] = road.cnt+1;
+                        corner[nx][ny] = road.cnt+1;
                         q.offer(new Road(nx, ny, road.cost+600, i, road.cnt+1));
-                    } else if (road.arrow != i && corner[nx][ny] > road.cnt+1) {
-                        if ((corner[nx][ny] - road.cnt+1) * 500 > road.cost+600 - distance[nx][ny]) {
-                            distance[nx][ny] = road.cost+600;
-                            corner[road.x][road.y] = road.cnt+1;
-                            q.offer(new Road(nx, ny, road.cost+600, i, road.cnt+1));
-                        }
+                    } else if (road.arrow != i && corner[nx][ny] > road.cnt) {
+                        distance[nx][ny] = road.cost+600;
+                        corner[nx][ny] = road.cnt+1;
+                        q.offer(new Road(nx, ny, road.cost+600, i, road.cnt+1));
                     }
                 }
             }
         }
         
+        //System.out.println(Arrays.deepToString(corner));
         //System.out.println(Arrays.deepToString(distance));
         
         return distance[n-1][n-1];

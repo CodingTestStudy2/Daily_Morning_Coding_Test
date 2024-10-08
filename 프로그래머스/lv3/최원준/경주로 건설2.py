@@ -51,3 +51,24 @@ class Solution {
 '''
 
 
+import heapq
+def solution(board):
+    dir = [[1,0],[0,-1],[-1,0],[0,1]]
+    n, m = len(board), len(board[0])
+    dp = [[[float('inf')] * 4 for _ in range(m)] for _ in range(n)]
+    min_heap = []
+    for i in range(4):
+        heapq.heappush(min_heap, (0,0,0,i))
+
+    while min_heap:
+        cost, x, y, d = heapq.heappop(min_heap)
+
+        for i in range(4):
+            if (d+2)%4 == i: continue
+            nx, ny = x + dir[i][0], y + dir[i][1]
+            new_cost = cost+100 if i == d else cost+600
+            if (nx<0 or nx>=n or ny<0 or ny>=m or dp[nx][ny][i] < new_cost or board[nx][ny] == 1): continue
+            dp[nx][ny][i] = new_cost;
+            heapq.heappush(min_heap, (new_cost, nx, ny, i))
+
+    return min(dp[n-1][m-1])

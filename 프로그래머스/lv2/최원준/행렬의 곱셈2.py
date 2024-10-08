@@ -24,4 +24,5 @@ class Solution {
 
 '''
 
-
+def solution(arr1, arr2):
+    return [[sum(arr1[row][i] * arr2[i][col] for i in range(len(arr2))) for col in range(len(arr2[0]))] for row in range(len(arr1))]

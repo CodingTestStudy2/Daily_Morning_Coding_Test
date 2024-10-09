@@ -1,3 +1,6 @@
+## 이진 탐색 
+
+```kotlin
 /*
 발표한 논문 n편 중 
 h번 이상 인용된 논문이 h편 이상이고 
@@ -43,3 +46,35 @@ class Solution {
         return ans
     }
 }
+```
+
+## 생각의 전환 
+
+```kotlin 
+/*
+h번 이상 인용된 논문이 h편 이상
+-> h의 최댓값 구하기
+
+0 1 3 5 6 | 0번 이상 인용된 논문 5편
+0 1 3 5 6 | 1번 이상 인용된 논문 4편 
+0 1 3 5 6 | 3번 이상 인용된 논문 3편 -> H-Index
+0 1 3 5 6 | 5번 이상 인용된 논문 2편 
+0 1 3 5 6 | 6번 이상 인용된 논문 1편 
+
+val h = n - i
+if(citations[i] >= h) return h
+*/
+class Solution {
+    fun solution(citations: IntArray): Int {
+        val N = citations.size 
+        citations.sort()
+        
+        for(i in citations.indices){
+            val h = N - i
+            if(citations[i] >= h) return h
+        }
+        
+        return 0 
+    }
+}
+```

@@ -13,24 +13,13 @@ class Solution {
     Deque<String> deque = new LinkedList<>();
     Set<String> cache = new HashSet<>();
 
-    public String preprocess(String city) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < city.length(); i++) {
-            char c = city.charAt(i);
-            if (c != ' ') {
-                sb.append(Character.toLowerCase(c));
-            }
-        }
-        return sb.toString();
-    }
-
     public int solution(int cacheSize, String[] cities) {
         if (cacheSize == 0) return 5 * cities.length;
 
         int ans = 0;
 
         for (String city : cities) {
-            city = preprocess(city);
+            city = city.toLowerCase();
 
             if (cache.contains(city)) {
                 ans += 1;
@@ -47,6 +36,7 @@ class Solution {
         return ans;
     }
 }
+
 
 
 '''

@@ -1,5 +1,3 @@
-package 프로그래머스.lv1.신은혜;
-
 class Solution {
     
     public int solution(int[][] sizes) {

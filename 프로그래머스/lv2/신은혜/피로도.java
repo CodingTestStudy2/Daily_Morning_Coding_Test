@@ -1,12 +1,11 @@
-package 프로그래머스.lv2.신은혜;
-
 class Solution {
     static int max = 0;
     static int visited[] = new int[8];
     static void dfs(int cnt, int limit, int[][] dungeons){
         int flag = 0;
         for(int i=0; i<dungeons.length; i++){
-            if(visited[i]==0&&limit>=dungeons[i][0]){ flag = 1;
+            if(visited[i]==0&&limit>=dungeons[i][0]){ 
+                flag = 1;
                 visited[i]=1;
                 dfs(cnt+1,limit-dungeons[i][1],dungeons);
                 visited[i]=0;

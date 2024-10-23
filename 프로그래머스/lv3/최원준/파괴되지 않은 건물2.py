@@ -44,3 +44,31 @@ class Solution {
 '''
 
 
+def solution(board, skill):
+    n = len(board)
+    m = len(board[0])
+
+    dp = [[0 for _ in range(m + 2)] for _ in range(n + 2)]
+
+    for t, r1, c1, r2, c2, degree in skill:
+        if t == 1:
+            degree *= -1
+
+        dp[r1 + 1][c1 + 1] += degree
+        dp[r1 + 1][c2 + 2] -= degree
+        dp[r2 + 2][c1 + 1] -= degree
+        dp[r2 + 2][c2 + 2] += degree
+
+    for row in range(1, n+2):
+        prefix = dp[row][0];
+        for col in range(1, m+2):
+            prefix += dp[row][col]
+            dp[row][col] = dp[row-1][col] + prefix
+
+    ans = 0
+    for row in range(n):
+        for col in range(m):
+            if board[row][col] + dp[row+1][col+1] > 0:
+                ans += 1
+    return ans
+

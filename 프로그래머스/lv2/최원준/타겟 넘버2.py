@@ -30,3 +30,15 @@ class Solution {
 '''
 
 
+from collections import defaultdict
+def solution(numbers, target):
+    prev = defaultdict(int)
+    prev[0] = 1
+
+    for i, n in enumerate(numbers):
+        curr = defaultdict(int)
+        for k, v in prev.items():
+            curr[k+n] += v
+            curr[k-n] += v
+        prev = curr
+    return prev[target]

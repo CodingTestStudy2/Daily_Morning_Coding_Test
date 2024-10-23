@@ -8,8 +8,10 @@ class Solution {
     fun solution(board: Array<IntArray>, skill: Array<IntArray>): Int {
         var answer: Int = 0
         val N = board.size 
-        val M = board[0].size 
-        val arr = Array(N + 1) { IntArray(M + 1) { 0 } }
+        val M = board[0].size
+        
+        // 크기를 가로, 세로 1칸씩 크게 잡는다. 
+        val arr = Array(N + 1) { IntArray(M + 1) { 0 } } 
 
         for(row in skill){
             val type = row[0]
@@ -25,7 +27,7 @@ class Solution {
             
             // 변화량 누적합 
             arr[r1][c1] += degree
-            arr[r2 + 1][c2 +1] += degree
+            arr[r2 + 1][c2 + 1] += degree
             arr[r1][c2 + 1] += -degree
             arr[r2 + 1][c1] += -degree
         }

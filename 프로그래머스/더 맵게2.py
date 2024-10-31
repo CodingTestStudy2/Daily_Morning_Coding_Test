@@ -4,9 +4,9 @@
 1. 아이디어 :
 
 2. 시간복잡도 :
-    O(
+    O(nlogn)
 3. 자료구조 :
-
+    우선순위 큐
 import java.util.PriorityQueue;
 
 class Solution {
@@ -28,3 +28,11 @@ class Solution {
 '''
 
 
+import heapq
+def solution(scoville, K):
+    heapq.heapify(scoville)
+    ans = 0
+    while len(scoville) > 1 and scoville[0] < K:
+        heapq.heappush(scoville, heapq.heappop(scoville) + heapq.heappop(scoville)*2)
+        ans+=1
+    return -1 if scoville[0] < K else ans

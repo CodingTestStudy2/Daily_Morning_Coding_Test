@@ -4,7 +4,7 @@
 1. 아이디어 :
 
 2. 시간복잡도 :
-    O(
+    O(n)
 3. 자료구조 :
 
 class Solution {
@@ -17,4 +17,6 @@ class Solution {
 
 '''
 
+def solution(price, money, count):
+    return max(0, sum(price * (i + 1) for i in range(count)) - money)
 

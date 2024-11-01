@@ -2,10 +2,12 @@
 
 '''
 1. 아이디어 :
-
+    누적합을 통해 해당 시간(초)에 시청자를 구한다.
+    슬라이딩 윈도우를 통해서 최대값을 갱신
 2. 시간복잡도 :
-    O(
+    O(n)
 3. 자료구조 :
+    배열
 
 import java.util.*;
 class Solution {
@@ -64,11 +66,52 @@ class Solution {
     }
 }
 
-
-
-
-
-
 '''
+
+def solution(play_time, adv_time, logs):
+    def serialize(time):
+        h, m, s = time.split(":")
+        return int(h) * 3600 + int(m) * 60 + int(s)
+
+    def deserialize(num):
+        h = str(num // 3600)
+        if len(h) == 1:
+            h = "0" + h
+        num = num % 3600
+        m = str(num // 60)
+        if len(m) == 1:
+            m = "0" + m
+        num = num % 60
+        s = str(num)
+        if len(s) == 1:
+            s = "0" + s
+        return h + ":" + m + ":" + s
+
+    play_time = serialize(play_time)
+    adv_duration = serialize(adv_time)
+
+    prefix_sum = [0] * (play_time+1)
+
+    for log in logs:
+        times = log.split("-")
+        prefix_sum[serialize(times[0])]+=1
+        prefix_sum[serialize(times[1])]-=1
+
+    for i in range(1, play_time):
+        prefix_sum[i] += prefix_sum[i-1]
+
+    cmax = 0
+    for i in range(adv_duration): cmax += prefix_sum[i]
+
+    curr = cmax
+    ans = 0
+
+    for start in range(1, play_time-adv_duration + 1):
+        curr += prefix_sum[start + adv_duration - 1] - prefix_sum[start -1]
+        if (curr > cmax):
+            cmax = curr
+            ans = start
+
+    return deserialize(ans)
 
 

@@ -4,9 +4,9 @@
 1. 아이디어 :
 
 2. 시간복잡도 :
-    O(
+    O(nlogn)
 3. 자료구조 :
-
+    우선순위큐
 import java.util.*;
 class Solution {
     public class Char{
@@ -31,3 +31,6 @@ class Solution {
 '''
 
 
+
+def solution(s):
+    return "".join(sorted(list(s), key = lambda x: -ord(x)))

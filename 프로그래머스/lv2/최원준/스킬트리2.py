@@ -33,3 +33,16 @@ class Solution {
 '''
 
 
+def solution(skill, skill_trees):
+    def check(skill, skillTree):
+        skill_idx = 0
+        for i in range(len(skillTree)):
+            curr_skill, curr_skilltree = skill[skill_idx], skillTree[i];
+            if curr_skilltree not in skill_idxs: continue
+            if (skill_idxs[curr_skilltree] != skill_idx): return False
+            skill_idx += 1
+            if skill_idx == len(skill): return True
+        return True
+
+    skill_idxs = {skill[i] : i for i in range(len(skill))};
+    return sum([1 for skill_tree in skill_trees if check(skill, skill_tree)])

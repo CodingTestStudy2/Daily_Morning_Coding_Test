@@ -2,11 +2,13 @@
 
 '''
 1. 아이디어 :
-
+    dfs를 사용.
+    우선순위가 높은 d, l, r, u 순으로 이동.
+    possible을 통해 이동 가능한지 확인.
 2. 시간복잡도 :
-    O(
+    O( 4 ** k)
 3. 자료구조 :
-
+    배열
 
 import java.util.*;
 class Solution {

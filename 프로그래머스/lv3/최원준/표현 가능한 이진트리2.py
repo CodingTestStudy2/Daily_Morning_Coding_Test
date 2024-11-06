@@ -84,3 +84,45 @@ class Solution {
 '''
 
 
+def solution(numbers):
+    def fullbinary(number):
+        binary = bin(number)[2:]
+        length = len(binary)
+        totallength = 1
+        while totallength < length:
+            totallength = totallength * 2 + 1
+
+        ans = ""
+        for i in range(totallength - length):
+            ans += "0"
+        return ans + binary
+
+    def is_possible(bin):
+        n = len(bin)
+        stack = []
+        stack.append([0, n - 1])
+
+        while stack:
+            left, right = stack.pop()
+            mid = (left + right) // 2
+
+            parent = bin[mid] == '1'
+
+            if left != mid:
+                stack.append([left, mid - 1])
+            if mid != right:
+                stack.append([mid + 1, right])
+
+            if not parent:
+                if (mid != left and bin[(left + mid - 1) // 2] == '1') or (mid != right and bin[(mid + 1 + right) // 2] == '1'):
+                    return False
+        return True
+
+    n = len(numbers)
+    ans = []
+    for i in range(n):
+        if is_possible(fullbinary(numbers[i])):
+            ans.append(1)
+        else:
+            ans.append(0)
+    return ans

@@ -37,3 +37,19 @@ class Solution {
 '''
 
 
+def solution(order):
+    stack, ans, front = [], 0, 1
+
+    for tobeloaded in order:
+        if front <=tobeloaded:
+            while front < tobeloaded:
+                stack.append(front)
+                front+=1
+            front+=1
+            ans+=1
+        else:
+            if stack and stack.pop() == tobeloaded:
+                ans+=1
+            else:
+                return ans
+    return ans

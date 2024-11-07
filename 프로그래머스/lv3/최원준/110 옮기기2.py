@@ -2,11 +2,12 @@
 
 '''
 1. 아이디어 :
-
+    가장 뒤 0 에 110들을 넣어주거나,
+    가장 앞 1 앞에 110들을 넣어주면 된다.
 2. 시간복잡도 :
-    O(
+    O( n * m )
 3. 자료구조 :
-
+    스택
 
 import java.util.*;
 class Solution {
@@ -77,3 +78,40 @@ class Solution {
 '''
 
 
+def solution(s):
+
+    def count110(string):
+        count_110 = 0
+        stack = []
+
+        for char in string:
+            stack.append(char)
+            if len(stack) >= 3 and stack[-3:] == ['1', '1', '0']:
+                count_110 += 1
+                for _ in range(3):
+                    stack.pop()
+        return count_110, "".join(stack)
+
+    ans = []
+
+    for string in s:
+        count_110, string = count110(string)
+
+        index = len(string)
+        found = False
+
+        for i in range(len(string) - 1, -1, -1):
+            if string[i] == '0':
+                index = i + 1
+                found = True
+                break
+
+        if not found:
+            for i in range(len(string)):
+                if string[i] == '1':
+                    index = i
+                    break
+
+        ans.append(string[:index] + ("110" * count_110) + string[index:])
+
+    return ans

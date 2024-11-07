@@ -2,11 +2,11 @@
 
 '''
 1. 아이디어 :
-
+    실시간으로 업데이트가 필요없기때문에, 마지막에 이름만 바꿔주면 시간을 줄일 수 있다.
 2. 시간복잡도 :
-    O(
+    O(n)
 3. 자료구조 :
-
+    해시맵
 
 import java.util.*;
 class Solution {
@@ -44,3 +44,25 @@ class Solution {
 '''
 
 
+def solution(record):
+    history = []
+    uid_name_mapper = {}
+    msgTypeAndContent = {"Enter" : "+", "+" : "님이 들어왔습니다.",
+                         "Leave" : "-", "-": "님이 나갔습니다."}
+
+    for r in record:
+        info = r.split(" ")
+        if info[0] == "Change":
+            uid_name_mapper[info[1]] = info[2]
+        else:
+            history.append(msgTypeAndContent[info[0]] + info[1])
+            if info[0] == "Enter":
+                uid_name_mapper[info[1]] = info[2]
+
+    ans = []
+    for i in range(len(history)):
+        log = history[i]
+        name = uid_name_mapper[log[1:]]
+        ans.append(name + msgTypeAndContent[log[0]])
+
+    return ans

@@ -4,7 +4,7 @@
 1. 아이디어 :
 
 2. 시간복잡도 :
-    O(
+    O(n)
 3. 자료구조 :
 
 
@@ -19,4 +19,5 @@ class Solution {
 }
 '''
 
-
+def solution(a, b):
+    return sum([a[i] * b[i] for i in range(len(a))])

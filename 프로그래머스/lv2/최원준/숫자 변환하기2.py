@@ -2,11 +2,11 @@
 
 '''
 1. 아이디어 :
-
+    횟수가 적은 숫자부터 탐색.
 2. 시간복잡도 :
-    O(
+    O(3nlogn)
 3. 자료구조 :
-
+    힙, 해시셋
 
 import java.util.*;
 class Solution {
@@ -37,3 +37,18 @@ class Solution {
 '''
 
 
+import heapq
+def solution(x, y, n):
+    minheap = []
+    visited = set()
+    heapq.heappush(minheap, [0,x])
+
+    while minheap:
+        count, val = heapq.heappop(minheap)
+        if val == y: return count
+        nvals = [val*3, val*2, val+n]
+        for nval in nvals:
+            if nval<=y and nval not in visited:
+                heapq.heappush(minheap, [count+1, nval])
+                visited.add(nval)
+    return -1

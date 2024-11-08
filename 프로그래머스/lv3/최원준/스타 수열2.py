@@ -2,11 +2,13 @@
 
 '''
 1. 아이디어 :
-
+    숫자 종류와 등장횟수를 구한다.
+    부분 집합을 만들지 않고, 각 숫자에 대해 i와 i+1을 비교하면서 짝을 구한다.
+    숫자의 등장횟수가 지금까지의 최대값보다 작으면 계산하지 않는다. (정렬을 하면 더 빠를수도..)
 2. 시간복잡도 :
-    O(
+    O( n*n )
 3. 자료구조 :
-
+    해시맵
 
 import java.util.*;
 class Solution {
@@ -39,3 +41,19 @@ class Solution {
 '''
 
 
+from collections import Counter
+def solution(a):
+    n, ans = len(a), 0
+    if n<2: return 0
+
+    for k, v in Counter(a).items():
+        if (v < ans): continue
+        count, i = 0, 0
+        while (i < n-1):
+            if (a[i] == k or a[i+1] == k) and a[i] != a[i+1]:
+                count+=1
+                i+=2
+            else:
+                i+=1
+        ans = max(ans, count)
+    return ans*2

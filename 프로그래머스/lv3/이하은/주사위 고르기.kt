@@ -36,7 +36,7 @@ class Solution {
         for(i in idx until N){
             if(!selected[i]){
                 selected[i] = true
-                diceA.add(i) // cnt번째로 선택된 인덱스
+                diceA.add(i)
                 
                 dfs(i + 1, cnt + 1)
                 

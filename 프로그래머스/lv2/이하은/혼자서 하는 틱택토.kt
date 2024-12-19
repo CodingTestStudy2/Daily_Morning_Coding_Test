@@ -14,20 +14,40 @@ OXOX
 => O의 개수 >= X의 개수 (0 이상)
 
 O 또는 X의 개수가 3 이상이면, 승자 확인
-O win: O의 개수 > X의 개수
+O win: O의 개수 == X의 개수 + 1
 X win: O의 개수 == X의 개수
-무승부: O의 개수 > X의 개수
 
+무승부 
 OOX
 XOO
 OXX
 
+빙고가 없는 경우 
 OOX
 O.X
 X..
+
+한 사람이 두번 이상 빙고
+OXO
+XOX
+OXO
+-> possible 
+
+OOO
+XOX
+XXO
+-> impossible 
+
+동시에 빙고 
+OOO
+XXX
+...
 */
 class Solution {
+    lateinit var arr: Array<String>
+    
     fun solution(board: Array<String>): Int {
+        arr = board 
         var ocnt = 0
         var xcnt = 0
         
@@ -37,91 +57,60 @@ class Solution {
                 if(e == 'X') xcnt++
             }
         }
+        
+        val obingo = countBingo('O')
+        val xbingo = countBingo('X')
 
-        // 게임 종료 조건 확인
-        if(ocnt >= 3 || xcnt >= 3){
-            val winner = checkWinner(board)
-            when(winner){
-                'O' -> return if(ocnt - xcnt == 1) 1 else 0
-                'X' -> return if(ocnt == xcnt) 1 else 0
-                else -> {} // 승자 판단 불가한 경우 
-            }
-        }
-        
-        // 무승부 조건 확인
-        if(ocnt + xcnt == 9){
-            return if(ocnt - xcnt == 1) 1 else 0 
-        }
-    
         // 게임 순서 확인
-        return if(ocnt == xcnt || ocnt - xcnt == 1) 1 else 0 
+        if(ocnt < xcnt || ocnt > xcnt + 1) return 0 
+        
+        // 빙고 개수 확인
+        // if(obingo >= 2 || xbingo >= 2) return 0 // 이거 추가하면 오답 
+        if(obingo >= 1 && xbingo >= 1) return 0 
+
+        // 게임 승자에 따라 말의 개수 확인
+        if(obingo >= 1 && ocnt != xcnt + 1) return 0
+        if(xbingo >= 1 && ocnt != xcnt) return 0
+        
+        return 1
     }
     
-    fun checkWinner(board: Array<String>): Char {
-        var result = '.'
-        
+    fun countBingo(turn: Char): Int {
+        var bingo = 0 
         for(i in 0..2){
-            result = checkRow(board, i)
-            if(result != '.'){
-                return result
-            }
+            bingo += checkRow(i, turn)
+            bingo += checkColumn(i, turn)
         }
-        
-        for(j in 0..2){
-            result = checkColumn(board, j)
-            if(result != '.'){
-                return result
-            }
-        }
-        
-        result = checkCross(board)
-        if(result != '.'){
-            return result
-        }
-        
-        return result
+        bingo += checkStartLeftDiagonal(turn)
+        bingo += checkStartRightDiagonal(turn)
+        return bingo 
     }
     
-    fun checkRow(board: Array<String>, row: Int): Char {
-        val start = board[row][0]
-        val blank = '.'
-        
-        if(start == blank) return blank
-        
-        if(board[row][0] == board[row][1] && board[row][1] == board[row][2]) {
-            return start
+    fun checkRow(row: Int, turn: Char): Int {
+        for(i in 0..2){
+            if(arr[row][i] != turn) return 0
         }
-        
-        return blank
+        return 1
     }
     
-    fun checkColumn(board: Array<String>, col: Int): Char {
-        val start = board[0][col]
-        val blank = '.'
-        
-        if(start == blank) return blank
-        
-        if(board[0][col] == board[1][col] && board[1][col] == board[2][col]) {
-            return start
+    fun checkColumn(col: Int, turn: Char): Int {
+        for(i in 0..2){
+            if(arr[i][col] != turn) return 0
         }
-        
-        return blank
+        return 1
+    }
+
+    fun checkStartLeftDiagonal(turn: Char): Int {
+        for(i in 0..2){
+            if(arr[i][i] != turn) return 0 
+        }
+        return 1 
     }
     
-    fun checkCross(board: Array<String>): Char {
-        val start = board[1][1]
-        val blank = '.'
-        
-        if(start == blank) return blank
-        
-        if(board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
-            return start
+    fun checkStartRightDiagonal(turn: Char): Int {
+        for(i in 0..2){
+            if(arr[2-i][i] != turn) return 0 
         }
-        
-        if(board[0][2] == board[1][1] && board[1][1] == board[2][0]){
-            return start 
-        }
-        
-        return blank
+        return 1 
     }
 }

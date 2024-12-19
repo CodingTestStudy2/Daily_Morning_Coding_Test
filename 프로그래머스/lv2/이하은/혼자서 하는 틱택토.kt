@@ -65,8 +65,8 @@ class Solution {
         if(ocnt < xcnt || ocnt > xcnt + 1) return 0 
         
         // 빙고 개수 확인
-        // if(obingo >= 2 || xbingo >= 2) return 0 // 이거 추가하면 오답 
-        if(obingo >= 1 && xbingo >= 1) return 0 
+        // if(obingo >= 2 || xbingo >= 2) return 0 
+        // if(obingo >= 1 && xbingo >= 1) return 0 
 
         // 게임 승자에 따라 말의 개수 확인
         if(obingo >= 1 && ocnt != xcnt + 1) return 0

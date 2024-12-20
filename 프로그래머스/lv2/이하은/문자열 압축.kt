@@ -2,66 +2,66 @@ import java.util.*
 import kotlin.math.*
 
 /*
-aabbaccc
--> 1개 단위, 2a2ba3c
+압축 단위: 1..length/2 (length <= 1000)
 
-ababcdcdababcdcd 
--> 8개 단위, 2ababcdcd 
+aabbaccc (1..4)
+1 a|a|b|b|a|c|c|c -> 2a2ba3c (7)
+2 aa|bb|ac|cc 
+3 aab|bac|cc 
+4 aabb|accc
 
-abcabcdede 
--> 3개 단위, 2abcdede 
+abcabcdede (1..5)
+1 abcabcdede
+2 ab|ca|bc|de|de -> abcabc2de (9)
+3 abc|abc|ded|e -> 2abcdede (8)
 
-abcabcabcabcdededededede 
--> 6개 단위, 2abcabc2dedede 
-
-xababcdcdababcdcd -> 17
+1) 단위를 늘려가면서 문자열을 자른다. 
+2) 연속으로 중복되는 문자열 개수를 센다. 
+3) 압축 후의 문자열 길이를 구한다. 
+4) 최소 길이 갱신 
 */
 class Solution {
     fun solution(s: String): Int {
-        if(s.length == 1) return 1 
-        var answer = s.length
-    
-        // 문자열 단위를 1부터 s의 절반 길이까지 늘리면서 
-        for(i in 1..s.length / 2){
-            var compressed = ""
-            var chunk = s.substring(0, i)
+        var answer = s.length 
+        val maxLen = s.length
+        val origin = StringBuilder(s)
+        val compressed = StringBuilder()
+        
+        for(unit in 1..maxLen/2){
+            var prev = origin.substring(0, unit)
             var cnt = 1
             
-            // 연속된 문자열 찾기 
-            // i 단위로 인덱스 증가 
-            for(j in i until s.length step i){
-                val nextChunk = s.substring(j, j + i) 
+            for(i in unit until maxLen step unit){
+                val now = origin.substring(i, min(i + unit, maxLen))
                 
-                // 같은 문자열이 연속되어 있으면 
-                if(chunk == nextChunk){
-                    cnt++ // 개수 갱신
-                    
-                    // 예외 처리 (마지막에 남은 문자열이 있는 경우) 
-                    if(j + i > s.length){
-                        compressed += "${if(cnt >= 2) cnt else ""}${chunk}"
-                        break
-                    }
+                // 연속으로 중복되는 문자열 개수 카운트 
+                if(prev == now){
+                    cnt++
                 }else{
-                    // 다른 문자열이 나오면 
-                    // 현재까지의 압축 문자열 갱신 
-                    compressed += "${if(cnt >= 2) cnt else ""}${chunk}"
-
-                    // 예외 처리 (마지막에 남은 문자열이 있는 경우) 
-                    if(j + i > s.length){
-                        compressed += "${if(cnt >= 2) cnt else ""}${chunk}"
-                        break
+                    if(cnt >= 2){
+                        compressed.append("$cnt$prev")
+                    }else{
+                        compressed.append(prev)
                     }
                     
-                    // 다음 문자열 체크를 위해 변수 갱신
-                    chunk = s.substring(j, j + i)
+                    // 그 다음 케이스를 위한 변수 갱신
+                    prev = origin.substring(i, min(i + unit, maxLen))
                     cnt = 1
                 }
             }
             
-            println(compressed)
+            // 남은 문자열 처리 
+            if(cnt >= 2){
+                compressed.append("$cnt$prev")
+            }else{
+                compressed.append(prev)
+            }
+
+            // 최소 길이 갱신 
             answer = min(answer, compressed.length)
+            compressed.setLength(0)
         }
         
-        return answer
+        return answer 
     }
 }

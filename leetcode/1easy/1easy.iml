@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/권민서" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/조유리" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/최원준" isTestSource="false" packagePrefix="Leetcode" />
+      <sourceFolder url="file://$MODULE_DIR$/김용성" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

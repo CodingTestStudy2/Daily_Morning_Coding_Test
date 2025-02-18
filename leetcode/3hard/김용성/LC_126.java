@@ -1,57 +1,83 @@
 import java.util.*;
 
 public class LC_126 {
-    class Solution {
-        public static final int MAX = 501;
-        public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
-            List<List<Integer>> edge = new ArrayList<>(wordList.size());
-            int[] value = new int[wordList.size() + 2];
-            Arrays.fill(value, MAX);
+    public static final int MAX = 501;
 
-            makeEdge(beginWord, endWord, wordList, edge);
+    public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
+        wordList.addFirst(beginWord);
+        List<List<Integer>> edge = new ArrayList<>();
+        List<List<String>> ret = new ArrayList<>();
+        int[] value = new int[wordList.size()];
+        Arrays.fill(value, MAX);
 
-            Queue<Integer> queue = new LinkedList<>();
+        makeEdge(wordList, edge);
+        Queue<Pair> queue = new LinkedList<>();
 
-            queue.add(0);
-            while (!queue.isEmpty()) {
-                int cur = queue.poll();
-                for (int i = 0; i < edge.get(cur).size(); i++) {
-                    int next = edge.get(cur).get(i);
+        value[0] = 0;
+        List<String> firstWord = new ArrayList<>();
+        firstWord.add(wordList.getFirst());
+        queue.add(new Pair(0, firstWord));
 
-                    if(value[next] > value[cur] + 1) {
-                        value[next] = value[cur] + 1;
-                        queue.add(next);
-                    }
-                }
+        while (!queue.isEmpty()) {
+            int curIdx = queue.peek().first;
+            List<String> seq = queue.poll().second;
+
+            if (wordList.get(curIdx).equals(endWord)) {
+                ret.add(seq);
+                continue;
             }
 
-            if(value[wordList.size()-1] == MAX) return new ArrayList<>();
-            return 
-        }
+            for (int i = 0; i < edge.get(curIdx).size(); i++) {
+                int nextIdx = edge.get(curIdx).get(i);
 
-        private void makeEdge(String beginWord, String endWord, List<String> wordList, List<List<Integer>> edge) {
-            wordList.add(0, beginWord);
-            wordList.add(endWord);
 
-            for (int i = 0; i < wordList.size(); i++) {
-                for (int j = i + 1; j < wordList.size(); j++) {
-                    if (isSimilarWord(wordList.get(i), wordList.get(j))) {
-                        edge.get(i).add(j);
-                        edge.get(j).add(i);
-                    }
+                if (value[nextIdx] >= value[curIdx] + 1) {
+                    value[nextIdx] = value[curIdx] + 1;
+                    List<String> nextSeq = new ArrayList<>(seq);
+                    nextSeq.add(wordList.get(nextIdx));
+                    queue.add(new Pair(nextIdx, nextSeq));
                 }
             }
         }
 
-        public boolean isSimilarWord(String word1, String word2) {
-            int check = 0;
-            for (int i = 0; i < word1.length(); i++) {
-                if (word1.charAt(i) != word2.charAt(i)) {
-                    check++;
-                    if (check > 1) return false;
+        return ret;
+    }
+
+    private void makeEdge(List<String> wordList, List<List<Integer>> edge) {
+
+        for (int i = 0; i < wordList.size(); i++) {
+            edge.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < wordList.size(); i++) {
+            for (int j = i + 1; j < wordList.size(); j++) {
+                if (isSimilarWord(wordList.get(i), wordList.get(j))) {
+                    edge.get(i).add(j);
+                    edge.get(j).add(i);
                 }
             }
-            return true;
+        }
+    }
+
+    public boolean isSimilarWord(String word1, String word2) {
+        int check = 0;
+        for (int i = 0; i < word1.length(); i++) {
+            if (word1.charAt(i) != word2.charAt(i)) {
+                check++;
+                if (check > 1) return false;
+            }
+        }
+        return true;
+    }
+
+    private class Pair {
+        public Integer first;
+        public List<String> second;
+
+        public Pair(Integer first, List<String> second) {
+            this.first = first;
+            this.second = second;
         }
     }
 }
+

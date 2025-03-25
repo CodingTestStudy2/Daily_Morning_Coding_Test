@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/권민서" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/김유현" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/김지연" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/신은혜" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/양진혁" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/이선영" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/이슬기" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/이재표" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/이하은" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/지준혁" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/천옥수" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

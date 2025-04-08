@@ -1,17 +1,16 @@
 class Solution:
-    def numMatchingSubseq(self, s: str, words: list[str]) -> int:      
-        i, j = 0, 0
+    def numMatchingSubseq(self, s: str, words: List[str]) -> int:
         count = 0
-        for word in words:
 
+        for word in words:
+            i, j = 0, 0
             while i < len(word) and j < len(s):
                 if word[i] == s[j]: 
                     i += 1
                 j += 1 
-            
-            i == len(word) 
-        
+
             if i == len(word): 
-                count += 1
+                    count += 1
+                
         
         return count

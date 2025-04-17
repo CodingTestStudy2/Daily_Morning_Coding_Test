@@ -2,13 +2,13 @@ package Leetcode;
 
 /*
 1. 아이디어 :
-
+dp로 풀수있습니다.
 
 2. 시간복잡도 :
-O( )
+O( n )
 
 3. 자료구조/알고리즘 :
-
+배열 / dp
  */
 
 import java.util.HashSet;

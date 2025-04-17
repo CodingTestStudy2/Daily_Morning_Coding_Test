@@ -2,13 +2,13 @@ package Leetcode;
 
 /*
 1. 아이디어 :
-
+구현
 
 2. 시간복잡도 :
-O( )
+O( n*n, 1, 1)
 
 3. 자료구조/알고리즘 :
-
+해시맵 / 브루트포스
  */
 
 import java.util.HashMap;

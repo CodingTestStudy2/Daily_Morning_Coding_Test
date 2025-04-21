@@ -36,10 +36,9 @@ public class Q741 {
             if (grid[x1][y1] == -1 || grid[x2][y2] == -1) return -Integer.MAX_VALUE; //blocked
 
             if (x1 == n-1 && y1 == n-1) return grid[x1][y1];
-            if (x2 == n-1 && y2 == n-1) return grid[x2][y2];
 
             int total = 0;
-            total += (x1 == x2 && y1 == y2) ? grid[x1][y1] : grid[x1][y1] + grid[x2][y2];
+            total += (x1 == x2 && y1 == y2) ? grid[x1][y1] : grid[x1][y1] + grid[x2][y2]; // 중복 계산
             total += Math.max(
                     Math.max(backtrack(x1+1,y1,x2+1,y2), backtrack(x1+1,y1,x2,y2+1)),
                     Math.max(backtrack(x1,y1+1,x2+1,y2), backtrack(x1,y1+1,x2,y2+1)) );

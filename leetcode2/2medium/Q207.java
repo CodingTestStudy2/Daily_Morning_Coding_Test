@@ -2,68 +2,59 @@ package Leetcode;
 
 /*
 1. 아이디어 :
-- 현재 cur에서 cur.next.val을 찾아가면서 처리 하기
-- 같으면 넘어가고 틀리면 prev 값을 갱신
+-
 
 2. 시간복잡도 :
-O( n )
+O( n + m )
 3. 자료구조/알고리즘 :
-- /
+- / bfs
  */
 
-import java.util.Arrays;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
 
-public class Q82 {
-    /**
-     * Definition for singly-linked list.
-     *
-     * }
-     */
-
-
+public class Q207 {
     class Solution {
-        public ListNode deleteDuplicates(ListNode head) {
-            if(head == null) return null;
-            ListNode startingPoint = new ListNode(head.val, head); // dummy for head deletion
+        public boolean canFinish(int numCourses, int[][] prerequisites) {
+            if(prerequisites.length == 0) return true;
 
-            ListNode prev = startingPoint;
+            List<List<Integer>> list = new ArrayList<>();
+            for(int i = 0; i< numCourses;i++) {
+                list.add(new ArrayList<>());
+            }
 
-            ListNode cur = head;
+            for(int[] prerequisite : prerequisites) {
+                int class1 = prerequisite[0];
+                int class2 = prerequisite[1];
 
-            while(cur != null) {
-                if(cur.next != null && cur.val == cur.next.val) {
-                    int val = cur.val;
-                    while(cur != null && cur.val == val) {
-                        cur = cur.next;
+                list.get(class1).add(class2);
+            }
+
+            int[] inDegree = new int[numCourses];
+            for (int u = 0; u < numCourses; u++) {
+                for (int node : list.get(u)) {
+                    inDegree[node]++;
+                }
+            }
+            Queue<Integer> queue = new ArrayDeque<>();
+            for (int i = 0; i < numCourses; i++) {
+                if (inDegree[i] == 0) queue.offer(i);
+            }
+
+            int visitedCount = 0;
+            while (!queue.isEmpty()) {
+                int u = queue.poll();
+                visitedCount++;
+                for (int node : list.get(u)) {
+                    if (--inDegree[node] == 0) {
+                        queue.offer(node);
                     }
-
-                    prev.next = cur;
-                } else {
-                    prev = cur;
-                    cur = cur.next;
                 }
             }
 
-
-
-            return startingPoint.next;
+            return visitedCount == numCourses;
         }
-    }
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
     }
 }

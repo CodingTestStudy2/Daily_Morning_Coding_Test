@@ -10,51 +10,46 @@ O( n + m )
 - / bfs
  */
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
-public class Q207 {
+public class Q547 {
     class Solution {
-        public boolean canFinish(int numCourses, int[][] prerequisites) {
-            if(prerequisites.length == 0) return true;
+        public int findCircleNum(int[][] isConnected) {
 
             List<List<Integer>> list = new ArrayList<>();
-            for(int i = 0; i< numCourses;i++) {
+
+            for(int i =0;i<isConnected.length;i++) {
                 list.add(new ArrayList<>());
             }
 
-            for(int[] prerequisite : prerequisites) {
-                int class1 = prerequisite[0];
-                int class2 = prerequisite[1];
-
-                list.get(class1).add(class2);
-            }
-
-            int[] inDegree = new int[numCourses];
-            for (int u = 0; u < numCourses; u++) {
-                for (int node : list.get(u)) {
-                    inDegree[node]++;
+            for(int i = 0; i< isConnected.length; i++) {
+                for(int j = 0; j<isConnected[0].length;j++) {
+                    if(i == j) continue;
+                    if(isConnected[i][j] == 1) list.get(i).add(j);
                 }
             }
-            Queue<Integer> queue = new ArrayDeque<>();
-            for (int i = 0; i < numCourses; i++) {
-                if (inDegree[i] == 0) queue.offer(i);
-            }
-
-            int visitedCount = 0;
-            while (!queue.isEmpty()) {
-                int u = queue.poll();
-                visitedCount++;
-                for (int node : list.get(u)) {
-                    if (--inDegree[node] == 0) {
-                        queue.offer(node);
+            boolean[] visited = new boolean[isConnected.length];
+            int count = 0;
+            for(int i = 0; i<isConnected.length; i++) {
+                if(visited[i]) continue;
+                Queue<Integer> q = new LinkedList<>();
+                q.add(i);
+                count++;
+                visited[i] = true;
+                while(!q.isEmpty()) {
+                    int size = q.size();
+                    for(int j = 0; j<size; j++) {
+                        int province = q.poll();
+                        for(int nearProvince : list.get(province)) {
+                            if(visited[nearProvince]) continue;
+                            visited[nearProvince]= true;
+                            q.add(nearProvince);
+                        }
                     }
                 }
             }
 
-            return visitedCount == numCourses;
+            return count;
         }
     }
 }

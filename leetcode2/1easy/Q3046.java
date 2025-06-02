@@ -3,7 +3,7 @@ package Leetcode;
 /*
 1. 아이디어 :
 
- - 완전탐색으로 처리
+ - 완전탐색으로 하나씩 카운트 해가면서 똑같은 숫자가 3번이상 나오면 false, 아님 return
 
 2. 시간복잡도 :
 O( n )
@@ -11,30 +11,23 @@ O( n )
 - / 완전탐색
  */
 
-public class Q2908 {
-    class Solution {
-        public int minimumSum(int[] nums) {
+import java.util.HashMap;
+import java.util.Map;
 
-            int length = nums.length;
+public class Q3046 {
+    public boolean isPossibleToSplit(int[] nums) {
+        // 1 1 2 2 3 4
 
-            int minValue = Integer.MAX_VALUE;
-            int res = -1;
+        // if one element is more than three, return false;
+        Map<Integer, Integer> map = new HashMap<>();
 
-            for(int i = 0; i < length; i++) {
-                for(int j = i+1; j<length; j++) {
-                    for(int k = j+1; k<length; k++) {
-                        if(nums[i] < nums[j]  && nums[j] > nums[k]) {
-                            int sum = nums[i] + nums[j] + nums[k];
-                            if(minValue > sum) {
-                                // System.out.println("i : " + i + ", j : " + j + ", k : " + k);
-                                res = nums[i] + nums[j] + nums[k];
-                                minValue = sum;
-                            }
-                        }
-                    }
-                }
+        for(int num : nums) {
+            map.put(num, map.getOrDefault(num,0)+1);
+            if(map.containsKey(num)) {
+                if(map.get(num) > 2) return false;
             }
-            return res;
         }
+
+        return true;
     }
 }

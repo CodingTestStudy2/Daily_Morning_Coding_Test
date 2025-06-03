@@ -11,7 +11,7 @@
 
 
 '''
-class Solution {
+class Leetcode.이재훈.Solution {
     public String solution(String s) {
         String sentence = " " + s;
         String ans = "";

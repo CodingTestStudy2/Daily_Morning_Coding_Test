@@ -11,7 +11,7 @@
     우선순위큐
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     class Process {
         int dur;
         int start;

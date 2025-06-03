@@ -12,7 +12,7 @@
 
 '''
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int n) {
         int[] dp = new int[n+1];
         dp[1] = 1;

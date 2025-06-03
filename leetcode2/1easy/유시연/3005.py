@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def maxFrequencyElements(self, nums: List[int]) -> int:
         count = {}
 

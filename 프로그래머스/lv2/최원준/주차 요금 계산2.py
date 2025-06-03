@@ -9,7 +9,7 @@
 
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     Map<String, Integer> totalTime = new HashMap<>();
     Map<String, Integer> history = new HashMap<>();
     Set<String> parked = new HashSet<>();

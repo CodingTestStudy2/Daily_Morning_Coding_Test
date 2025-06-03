@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def numOfUnplacedFruits(self, fruits: List[int], baskets: List[int]) -> int:
         count = len(fruits)
         

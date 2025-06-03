@@ -10,7 +10,7 @@
 '''
 
 '''
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int[][] triangle) {
         int total_row = triangle.length;
         for (int row = total_row-2; row>=0; row--) {

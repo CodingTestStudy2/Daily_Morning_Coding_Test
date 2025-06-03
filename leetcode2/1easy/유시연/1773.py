@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def countMatches(self, items: List[List[str]], ruleKey: str, ruleValue: str) -> int:
         n = len(items)
         count = 0

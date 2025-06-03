@@ -7,7 +7,7 @@
     O(
 3. 자료구조 :
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public int[][] solution(int[][] arr1, int[][] arr2) {
         int n = arr1.length, m = arr2[0].length, k = arr1[0].length;
         int[][] ans = new int[n][m];

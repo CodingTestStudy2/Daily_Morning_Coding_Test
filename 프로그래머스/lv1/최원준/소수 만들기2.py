@@ -6,7 +6,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public HashSet<Integer> get_primes(int n){
         var primes = new HashSet<Integer>();
         if (n<2) return primes;

@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def maxScore(self, nums: list[int]) -> int:
         sorted_nums = sorted(nums, reverse=True)
 
@@ -16,7 +16,7 @@ class Solution:
     
 
 if __name__ == "__main__":
-    solution = Solution()
+    solution = Leetcode.이재훈.Solution()
 
     print(solution.maxScore([2, -1, 0, 1, -3, 3, -3]))
     print(solution.maxScore([-2, -3, 0]))

@@ -13,7 +13,7 @@
 
 import java.util.*;
 
-public class Solution {
+public class Leetcode.이재훈.Solution {
     public List<List<Integer>> getComb(int n, int r) {
         List<List<Integer>> combinations = new ArrayList<>();
         getCombDFS(n, r, 0, new ArrayList<>(), combinations);

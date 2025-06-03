@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     HashMap<Integer, ArrayList<Integer>> furthest;
     HashMap<Integer, ArrayList<Integer>> graph;
 

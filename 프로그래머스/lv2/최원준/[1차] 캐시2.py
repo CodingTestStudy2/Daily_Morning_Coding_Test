@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.Solution {
     Deque<String> deque = new LinkedList<>();
     Set<String> cache = new HashSet<>();
 

@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int[] q1, int[] q2) {
         Deque<Integer> queue1 = new ArrayDeque<>();
         Deque<Integer> queue2 = new ArrayDeque<>();

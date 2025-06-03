@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.Solution {
     int[][] grid;
 
     public int rotate(int x1, int y1, int x2, int y2) {

@@ -8,7 +8,7 @@
 3. 자료구조 :
     -
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     int[] discounts = new int[]{10,20,30,40};
     int U;
     int E;

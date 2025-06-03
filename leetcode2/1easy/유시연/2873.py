@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def maximumTripletValue(self, nums: List[int]) -> int:
         answer = 0
         for i in range(len(nums)-2):

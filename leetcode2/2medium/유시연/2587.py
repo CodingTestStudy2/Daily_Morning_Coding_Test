@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def maxScore(self, nums: List[int]) -> int:
         nums.sort(reverse=True)
         answer = 0

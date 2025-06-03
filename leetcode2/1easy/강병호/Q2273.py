@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def removeAnagrams(self, words: list[str]) -> list[str]:
         for i in range(len(words)-1, 0, -1):
             if self.checkAnagrams(words[i], words[i-1]):
@@ -16,7 +16,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.Solution()
 
     print(sol.removeAnagrams(["abba","baba","bbaa","cd","cd"]))
     print(sol.removeAnagrams(["a","b","c","d","e"]))

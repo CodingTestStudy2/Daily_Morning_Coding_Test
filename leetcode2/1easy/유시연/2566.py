@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def minMaxDifference(self, num: int) -> int:
         str_num = str(num)
         max_val = num

@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int[][] board, int[][] skills) {
         int n = board.length, m = board[0].length;
         int[][] dp = new int[n+2][m+2];

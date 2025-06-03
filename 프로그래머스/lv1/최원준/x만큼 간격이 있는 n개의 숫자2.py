@@ -7,7 +7,7 @@
     O(
 3. 자료구조 :
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public long[] solution(int x, int n) {
         long[] ans = new long[n];
         for (int i=0; i<n; i++) ans[i] = (long)x * (i+1);

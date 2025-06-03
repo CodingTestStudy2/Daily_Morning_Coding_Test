@@ -11,7 +11,7 @@
 
 '''
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     int size;
     
     boolean check(String word1, String word2){

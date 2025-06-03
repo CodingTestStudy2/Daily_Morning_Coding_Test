@@ -1,5 +1,5 @@
 # 에러 나서 찾는중
-class Solution:
+class Leetcode.이재훈.Solution:
     def maxDiff(self, num: int) -> int:
         num_str = str(num)
         

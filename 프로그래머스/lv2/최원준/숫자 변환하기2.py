@@ -9,7 +9,7 @@
     힙, 해시셋
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int x, int y, int n) {
         Set<Integer> cache = new HashSet<>();
         PriorityQueue<int[]> pq = new PriorityQueue<>((a,b) -> a[1]-b[1]);

@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-public class Solution {
+public class Leetcode.이재훈.Solution {
     public int[] solution(int n, int[][] roads, int[] sources, int destination) {
         Map<Integer, List<Integer>> graph = new HashMap<>();
         for (int i = 1; i <= n; i++) {

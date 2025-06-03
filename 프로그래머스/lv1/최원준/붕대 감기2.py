@@ -12,7 +12,7 @@
 
 '''
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     static int time;
     static int damage;
     

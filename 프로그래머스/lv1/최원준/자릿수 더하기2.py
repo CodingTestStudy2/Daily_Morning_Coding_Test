@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-public class Solution {
+public class Leetcode.이재훈.Solution {
     public int solution(int n) {
         int ans = 0;
         for (Character c : String.valueOf(n).toCharArray()) {

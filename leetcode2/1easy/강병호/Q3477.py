@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def numOfUnplacedFruits(self, fruits: list[int], baskets: list[int]) -> int:
         length = len(fruits)
         placed = [False] * length
@@ -25,7 +25,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.Solution()
 
     # print(sol.numOfUnplacedFruits([4, 2, 5], [3, 5, 4]))
     print(sol.numOfUnplacedFruits([8, 5], [1, 8]))

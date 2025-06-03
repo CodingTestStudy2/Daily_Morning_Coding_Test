@@ -1,4 +1,4 @@
-class Solution {
+class Leetcode.이재훈.Solution {
     func numSpecial(_ mat: [[Int]]) -> Int {
         // [[0,0,0,1],[1,0,0,0],[0,1,1,0],[0,0,0,0]]
 

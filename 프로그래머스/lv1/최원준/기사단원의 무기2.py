@@ -6,7 +6,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int get_power(int n, int limit, int power){
         if (n==1) return 1;
         int count = 0;

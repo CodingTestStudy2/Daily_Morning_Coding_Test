@@ -8,7 +8,7 @@
 3. 자료구조 :
     우선순위큐
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public class Char{
         int ord;
         char c;

@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def numRookCaptures(self, board: List[List[str]]) -> int:
         
         count = 0

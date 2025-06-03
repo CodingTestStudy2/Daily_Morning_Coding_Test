@@ -7,7 +7,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public int[] solution(String[] genres, int[] plays) {
         int n = genres.length;
         Map<String, Integer> genrePlays = new HashMap<>();

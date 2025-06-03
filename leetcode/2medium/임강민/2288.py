@@ -1,6 +1,6 @@
 # Apply Discount to Prices
 
-class Solution:
+class Leetcode.이재훈.Solution:
     def discountPrices(self, sentence: str, discount: int) -> str:
         answer = []
         for s in sentence.split(' '):

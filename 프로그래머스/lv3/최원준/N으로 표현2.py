@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public Set<Integer> getCombinations(Set<Integer> set1, Set<Integer> set2) {
         Set<Integer> ans = new HashSet<>();
 

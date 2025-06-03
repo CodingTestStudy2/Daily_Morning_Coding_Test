@@ -7,7 +7,7 @@
     O(
 3. 자료구조 :
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public String to3Bin(int n){
         int base = 3;
         String ans = "";

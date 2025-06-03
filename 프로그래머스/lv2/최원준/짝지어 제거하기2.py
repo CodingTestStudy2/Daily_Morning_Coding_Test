@@ -11,7 +11,7 @@
 
 '''
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(String s) {
         var stack = new Stack<>();
         for (Character c : s.toCharArray()){

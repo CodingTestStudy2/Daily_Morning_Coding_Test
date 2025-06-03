@@ -1,5 +1,5 @@
 # 1893. Chck if All the Integers in a Range Are Covered
-class Solution:
+class Leetcode.이재훈.Solution:
     def isCovered(self, ranges: List[List[int]], left: int, right: int) -> bool:
 
         lst = [False] * 51

@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def longestAlternatingSubarray(self, nums: List[int], threshold: int) -> int:
         max_result = 0
         result = 0

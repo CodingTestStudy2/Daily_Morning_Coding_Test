@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public String solution(String phone_number) {
         StringBuilder sb = new StringBuilder();
         for (int i=0; i<phone_number.length()-4; i++) sb.append("*");

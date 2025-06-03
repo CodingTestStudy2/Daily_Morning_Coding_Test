@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     //마지막 타일이 가로일떄 (n-2) , 세로일때 (n-1)
     public int solution(int n) {
         int[] dp = new int[n+1];

@@ -9,7 +9,7 @@
   
 """
 
-class Solution:
+class Leetcode.이재훈.Solution:
     def findSolution(self, customfunction: 'CustomFunction', z: int) -> List[List[int]]:
         result = []
         x, y = 1,1000

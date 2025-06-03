@@ -11,7 +11,7 @@
 
 
 '''
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int n, int m, int[] section) {
         int ans = 0;
         int idx = 1;

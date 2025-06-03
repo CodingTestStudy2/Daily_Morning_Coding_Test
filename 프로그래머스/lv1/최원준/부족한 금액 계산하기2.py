@@ -7,7 +7,7 @@
     O(n)
 3. 자료구조 :
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public long solution(int price, int money, int count) {
         long total = 0;
         for (int i=1; i<count+1; i++) total += price*i;

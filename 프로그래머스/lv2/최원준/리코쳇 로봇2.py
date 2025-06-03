@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     int[] dx = new int[]{1,-1,0,0};
     int[] dy = new int[]{0,0,1,-1};
     int N;

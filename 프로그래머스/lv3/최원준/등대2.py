@@ -16,7 +16,7 @@
     해시셋, 해시맵, 2차원 dp 배열
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     Map<Integer, ArrayList<Integer>> graph;
     int[][] dp;
     boolean[] visited;

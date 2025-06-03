@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def evaluate(self, s: str, knowledge: List[List[str]]) -> str:
         knowledge_dict = {}
 

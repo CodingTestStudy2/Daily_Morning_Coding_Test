@@ -1,6 +1,6 @@
 import heapq
 
-class Solution:
+class Leetcode.이재훈.Solution:
     def maxStarSum(self, vals: List[int], edges: List[List[int]], k: int) -> int:
         adj_dict = dict()
         for i, val in enumerate(vals):

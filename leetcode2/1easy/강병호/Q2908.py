@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def minimumSum(self, nums: list[int]) -> int:
         result = -1
         for idx in range(1, len(nums)-1): # mid-num
@@ -23,7 +23,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.Solution()
     print(sol.minimumSum([8, 6, 1, 5, 3]))
     print(sol.minimumSum([6,5,4,3,4,5]))
     print(sol.minimumSum([5,4,8,7,10,2]))

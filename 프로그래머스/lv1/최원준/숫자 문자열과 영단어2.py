@@ -9,7 +9,7 @@
 
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(String s) {
         HashMap<String, String> map = new HashMap<>();
         map.put("zero", "0");

@@ -1,4 +1,4 @@
-class Solution {
+class Leetcode.이재훈.Solution {
     func generateTheString(_ n: Int) -> String {
         
         let count = n % 2 == 0

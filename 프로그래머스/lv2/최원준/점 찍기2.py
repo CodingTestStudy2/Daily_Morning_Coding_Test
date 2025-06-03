@@ -8,7 +8,7 @@
 3. 자료구조 :
     -
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public long solution(int k, int d) {
         long ans = 0;
         long d2 = (long)d*d;

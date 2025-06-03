@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def minimumRightShifts(self, nums: List[int]) -> int:
         min_idx = nums.index(min(nums))
         new_nums = nums[min_idx:] + nums[:min_idx]

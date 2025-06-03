@@ -1,5 +1,5 @@
 import heapq
-class Solution:
+class Leetcode.이재훈.Solution:
     def maximumElementAfterDecrementingAndRearranging(self, arr: List[int]) -> int:
         heapq.heapify(arr)  # min heap
         N = len(arr)

@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int N, int[][] roads, int K) {
         int[][] distances = new int[N+1][N+1];
         for (int i=1; i<=N; i++) Arrays.fill(distances[i], Integer.MAX_VALUE);

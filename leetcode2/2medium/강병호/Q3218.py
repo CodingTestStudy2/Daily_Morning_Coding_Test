@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def minimumCost(self, m: int, n: int, horizontalCut: list[int], verticalCut: list[int]) -> int:
         horizontalCutCount = 0
         verticalCutCount = 0
@@ -36,7 +36,7 @@ class Solution:
         return result
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.Solution()
 
     # print(sol.minimumCost(3, 2, [1,3], [5]))
     # print(sol.minimumCost(2, 2, [7], [4]))

@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int[] solution(int[] progresses, int[] speeds) {
         int n = progresses.length;
         ArrayList<Integer> jobs = new ArrayList<>();

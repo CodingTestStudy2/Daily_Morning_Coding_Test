@@ -8,7 +8,7 @@
 
 import java.util.*;
 /*
-class Solution {
+class Leetcode.이재훈.Solution {
     private int[] dp1, dp2;
 
     public int calc(int[] sticker, int idx, boolean first){
@@ -40,7 +40,7 @@ class Solution {
 }
 */
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int sticker[]) {
         int n = sticker.length;
         if (n==1) return sticker[0];

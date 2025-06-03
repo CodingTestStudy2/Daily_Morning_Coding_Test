@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def zigzagTraversal(self, grid: List[List[int]]) -> List[int]:
         result = []
         flag = False

@@ -11,7 +11,7 @@
 
 '''
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(String dartResult) {
         int[] scores = new int[3];
         int idx = 0;

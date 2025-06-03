@@ -1,5 +1,5 @@
 from itertools import combinations
-class Solution:
+class Leetcode.이재훈.Solution:
     def countQuadruplets(nums) -> int:
         # 중복 가능
         ans = 0

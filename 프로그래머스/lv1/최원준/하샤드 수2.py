@@ -7,7 +7,7 @@
     O(
 3. 자료구조 :
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public boolean solution(int x) {
         int posTotal = 0;
         for (char c : String.valueOf(x).toCharArray()) {

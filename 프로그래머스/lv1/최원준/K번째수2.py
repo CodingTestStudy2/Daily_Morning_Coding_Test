@@ -9,7 +9,7 @@
 
 import java.util.Arrays;
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public int[] solution(int[] array, int[][] commands) {
         int[] ans = new int[commands.length];
         for (int i = 0; i < commands.length; i++) {

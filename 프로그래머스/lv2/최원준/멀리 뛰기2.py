@@ -5,7 +5,7 @@
     O(
 3. 자료구조 :
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public long solution(int n) {
         if (n<=2) return n;
         int[] dp = new int[n];

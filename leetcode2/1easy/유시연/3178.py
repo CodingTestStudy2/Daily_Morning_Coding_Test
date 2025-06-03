@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def numberOfChild(self, n: int, k: int) -> int:
         i = -1
         go_right = True

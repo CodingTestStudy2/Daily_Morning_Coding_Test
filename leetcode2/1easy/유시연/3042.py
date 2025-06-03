@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def countPrefixSuffixPairs(self, words: List[str]) -> int:
         count = 0
         n = len(words)

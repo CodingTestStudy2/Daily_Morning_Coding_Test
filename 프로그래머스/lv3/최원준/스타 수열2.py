@@ -11,7 +11,7 @@
     해시맵
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int[] a) {
         int n = a.length;
         int ans = 0;

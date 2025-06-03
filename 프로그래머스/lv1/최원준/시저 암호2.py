@@ -7,7 +7,7 @@
     O(
 3. 자료구조 :
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public String solution(String s, int n) {
         StringBuilder sb = new StringBuilder();
         for (char c : s.toCharArray()) {

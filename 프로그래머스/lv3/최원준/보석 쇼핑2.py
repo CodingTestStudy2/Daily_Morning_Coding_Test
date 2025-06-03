@@ -7,7 +7,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public int[] solution(String[] gems) {
         int n = gems.length;
         int kinds = 0;

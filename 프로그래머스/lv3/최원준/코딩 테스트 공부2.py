@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-public class Solution {
+public class Leetcode.이재훈.Solution {
     public int solution(int alp, int cop, int[][] problems) {
         int maxAlp = 0, maxCop = 0;
         for (int[] problem : problems) {

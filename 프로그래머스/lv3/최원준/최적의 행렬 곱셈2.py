@@ -7,7 +7,7 @@
     O(
 3. 자료구조 :
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int[][] m) {
         int n = m.length;
         int[][] dp = new int[n][n];

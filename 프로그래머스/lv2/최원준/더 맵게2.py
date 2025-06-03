@@ -9,7 +9,7 @@
     우선순위 큐
 import java.util.PriorityQueue;
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int[] scoville, int K) {
         int ans = 0;
         PriorityQueue<Long> pq = new PriorityQueue<>();

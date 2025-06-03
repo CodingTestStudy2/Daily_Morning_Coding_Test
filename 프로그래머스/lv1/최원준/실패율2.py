@@ -13,7 +13,7 @@
 '''
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public int[] solution(int N, int[] stages) {
         Arrays.sort(stages);
         int players = stages.length;

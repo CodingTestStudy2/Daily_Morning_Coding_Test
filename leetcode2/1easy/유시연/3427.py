@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def subarraySum(self, nums: List[int]) -> int:
         n = len(nums)
     

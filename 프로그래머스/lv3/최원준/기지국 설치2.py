@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int n, int[] stations, int w) {
         int range = w * 2 + 1;
         int ans = 0, count = 0;

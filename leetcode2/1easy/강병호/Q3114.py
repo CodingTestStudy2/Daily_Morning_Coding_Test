@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def findLatestTime(self, s: str) -> str:
         # i - 0 : i - 1과 연관 / 3이상이면 무조건 0
         # i - 1 : i - 0과 연관 / 1이면 0~2

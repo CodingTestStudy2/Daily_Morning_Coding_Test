@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int[] priorities, int location) {
         Deque<int[]> deque = new LinkedList<>();
         PriorityQueue<Integer> pq = new PriorityQueue<>((a,b) -> b-a);

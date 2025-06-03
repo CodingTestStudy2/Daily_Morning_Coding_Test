@@ -12,7 +12,7 @@
     해시맵, 해시셋
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int[] toppings) {
         int[] counter = new int[10001];
         int counts = 0;

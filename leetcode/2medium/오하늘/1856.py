@@ -1,6 +1,6 @@
 # 슬라이딩 윈도우 사용했는데 안됨.. 토픽 보고 모노톤 스택 ? 을 공부함.
 
-class Solution:
+class Leetcode.이재훈.Solution:
     def maxSumMinProduct(self, nums: List[int]) -> int:
         n = len(nums)
         p_sum = [0] * (n+1) # 누적합

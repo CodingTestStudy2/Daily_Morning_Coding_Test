@@ -11,7 +11,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.Solution {
     class Node {
         int index;
         int x;

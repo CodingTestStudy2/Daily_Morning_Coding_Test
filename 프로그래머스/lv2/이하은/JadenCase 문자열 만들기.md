@@ -1,7 +1,7 @@
 # 반복문으로 구현 
 
 ```kotlin
-class Solution {
+class Leetcode.이재훈.Solution {
     fun solution(input: String): String {
         var answer = ""
         if(input.isBlank()) return input
@@ -45,7 +45,7 @@ class Solution {
 ## capitalize() - v1.5부터 deprecated
 
 ```kotlin
-class Solution {
+class Leetcode.이재훈.Solution {
     fun solution(input: String) = input.lowercase().split(" ").map {
         it.capitalize()
     }.joinToString(" ")
@@ -55,7 +55,7 @@ class Solution {
 ## uppercaseChar() 
 
 ```kotlin 
-class Solution {
+class Leetcode.이재훈.Solution {
     fun solution(input: String) = input.split(" ").map {
         if(it.isEmpty()) it
         else{

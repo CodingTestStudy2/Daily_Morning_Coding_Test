@@ -9,7 +9,7 @@
 
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public String fullBinary(long number) {
         String binary = Long.toString(number, 2);
         int length = binary.length();

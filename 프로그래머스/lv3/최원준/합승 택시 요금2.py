@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int n, int s, int a, int b, int[][] fares) {
         int[][] graph = new int[n][n];
         for (int i=0; i<n; i++){
@@ -40,7 +40,7 @@ class Solution {
 
 import java.util.*;
 
-public class Solution {
+public class Leetcode.이재훈.Solution {
     public int[] dij(int start, int n, ArrayList<ArrayList<int[]>> graph) {
         int[] costs = new int[n];
         Arrays.fill(costs, Integer.MAX_VALUE);

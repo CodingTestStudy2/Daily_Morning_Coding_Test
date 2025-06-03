@@ -10,7 +10,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.Solution {
     int totalFriends;
     int weakLength;
     Set<Integer> visited = new HashSet<>();

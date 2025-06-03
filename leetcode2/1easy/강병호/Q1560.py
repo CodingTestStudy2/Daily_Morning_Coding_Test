@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def mostVisited(self, n: int, rounds: list[int]) -> list[int]:
         loc = rounds[0]
         count_map = dict()
@@ -25,7 +25,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.Solution()
     print(sol.mostVisited(4, [1,3,1,2]))
     print(sol.mostVisited(2, [2,1,2,1,2,1,2,1,2]))
     print(sol.mostVisited(7, [1,3,5,7]))

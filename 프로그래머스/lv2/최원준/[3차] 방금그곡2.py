@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     Map<String, String> map1 = new HashMap<>();
     Map<String, String> map2 = new HashMap<>();
     public void initMap() {

@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def zigzagTraversal(self, grid: list[list[int]]) -> list[int]:
         x, y = 0, 0
         max_x = len(grid[0])
@@ -36,5 +36,5 @@ class Solution:
 
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.Solution()
     print(sol.zigzagTraversal([[1,2], [3,4]]))

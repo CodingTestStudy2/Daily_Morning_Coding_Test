@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def secondsToRemoveOccurrences(self, s: str) -> int:
         # 문제 이해 : 01이 사라질때까지 01 -> 10 으로 변경
         ans = 0

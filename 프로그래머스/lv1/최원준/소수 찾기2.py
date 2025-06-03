@@ -12,7 +12,7 @@
 
 '''
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int n) {
         var sieve = new boolean[n+1];
         var start = 2;

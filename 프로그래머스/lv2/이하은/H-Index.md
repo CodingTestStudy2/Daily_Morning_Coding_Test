@@ -17,7 +17,7 @@ left = 0, right = citations.last()
 import kotlin.math.*
 import java.util.*
 
-class Solution {
+class Leetcode.이재훈.Solution {
     fun solution(citations: IntArray): Int {
         val N = citations.size 
         citations.sort()
@@ -64,7 +64,7 @@ h번 이상 인용된 논문이 h편 이상
 val h = n - i
 if(citations[i] >= h) return h
 */
-class Solution {
+class Leetcode.이재훈.Solution {
     fun solution(citations: IntArray): Int {
         val N = citations.size 
         citations.sort()

@@ -1,5 +1,5 @@
 from collections import deque
-class Solution:
+class Leetcode.이재훈.Solution:
     def maxRotateFunction(self, nums: List[int]) -> int:
         ans = float('-inf') # 음수의 경우가 있음
         nums_deque = deque(nums)

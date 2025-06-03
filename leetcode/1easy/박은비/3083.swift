@@ -2,7 +2,7 @@
     문자열에서 길이가 2인 부분문자열이 뒤집은 문자열에서 존재하냐?
 */
 
-class Solution {
+class Leetcode.이재훈.Solution {
     @_optimize(speed)
     func isSubstringPresent(_ s: String) -> Bool {
         let original = ContiguousArray(s)

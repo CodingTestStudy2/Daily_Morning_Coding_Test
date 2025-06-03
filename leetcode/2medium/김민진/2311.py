@@ -1,6 +1,6 @@
 # memory limit exceeded (52 / 153 testcases passed)
 
-class Solution:
+class Leetcode.이재훈.Solution:
     def __init__(self):
         self.s = None
         self.k = None

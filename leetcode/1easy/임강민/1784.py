@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def checkOnesSegment(self, s: str) -> bool:
         cnt = 0
         for i in range(len(s) - 1):

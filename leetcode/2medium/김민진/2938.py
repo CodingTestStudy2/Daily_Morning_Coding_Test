@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def minimumSteps(self, s: str) -> int:
         count_swap = 0
         first_1 = None

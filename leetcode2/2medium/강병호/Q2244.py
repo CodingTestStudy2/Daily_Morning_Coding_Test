@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def minimumRounds(self, tasks: list[int]) -> int:
         key_tasks = {}
 
@@ -35,7 +35,7 @@ class Solution:
     # def recur(self, value:int) -> bool:
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.Solution()
     print(sol.minimumRounds([5,5,5,5]))
 
     print(sol.minimumRounds([2, 3, 3]))

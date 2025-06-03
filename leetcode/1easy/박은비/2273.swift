@@ -1,4 +1,4 @@
-class Solution {
+class Leetcode.이재훈.Solution {
     @_optimize(speed)
     func removeAnagrams(_ words: [String]) -> [String] {
 

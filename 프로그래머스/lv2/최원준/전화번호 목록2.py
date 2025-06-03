@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public boolean solution(String[] phone_book) {
         Set<String> candid = new HashSet<>();
         for (var phone:phone_book) candid.add(phone);

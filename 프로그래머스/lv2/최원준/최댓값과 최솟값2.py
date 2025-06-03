@@ -14,7 +14,7 @@ def solution(s):
     return str(min(list(map(int,s.split(" "))))) + " " + str(max(list(map(int,s.split(" ")))))
 
 '''
-class Solution {
+class Leetcode.이재훈.Solution {
     public String solution(String s) {
         int cmin = Integer.MAX_VALUE, cmax = -cmin;
         String[] numStrs = s.split(" ");

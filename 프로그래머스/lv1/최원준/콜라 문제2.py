@@ -8,7 +8,7 @@
 3. 자료구조 :
     -
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int a, int b, int n) {
         int ans = 0;
         while (n >= a){

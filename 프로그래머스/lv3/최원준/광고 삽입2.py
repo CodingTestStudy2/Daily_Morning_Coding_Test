@@ -10,7 +10,7 @@
     배열
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int serialize(String time){
         String[] hms = time.split(":");
         return Integer.parseInt(hms[0])*3600 + Integer.parseInt(hms[1]) * 60 + Integer.parseInt(hms[2]);

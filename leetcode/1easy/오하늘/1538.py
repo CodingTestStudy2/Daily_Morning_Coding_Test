@@ -1,5 +1,5 @@
 from collections import deque
-class Solution:
+class Leetcode.이재훈.Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
         arr = deque(arr)
         tmp_k = 0

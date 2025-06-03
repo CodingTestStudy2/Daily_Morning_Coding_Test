@@ -7,7 +7,7 @@
     O(
 3. 자료구조 :
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public double solution(int[] arr) {
         double ans = 0;
         for (int num : arr) ans += num;

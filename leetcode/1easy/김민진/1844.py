@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.Solution:
     def shift(self, start_char, num):
         return chr(ord(start_char) + num)
     

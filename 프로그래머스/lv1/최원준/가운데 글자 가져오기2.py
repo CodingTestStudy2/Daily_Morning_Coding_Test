@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 
-class Solution {
+class Leetcode.이재훈.Solution {
     public String solution(String s) {
         int mid = (int)Math.floor((float)s.length()/2);
         if (s.length()%2 == 0) return s.substring(mid-1, mid+1);

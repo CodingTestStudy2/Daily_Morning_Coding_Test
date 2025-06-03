@@ -1,6 +1,6 @@
 # bfs로 풀다가 안풀려서, 풀이 참조.
 
-class Solution:
+class Leetcode.이재훈.Solution:
     def countSubTrees(self, n: int, edges: List[List[int]], labels: str) -> List[int]:
         graph = defaultdict(list) # 키가 존재하지 않아도 되는 딕셔너리
         for a, b in edges:

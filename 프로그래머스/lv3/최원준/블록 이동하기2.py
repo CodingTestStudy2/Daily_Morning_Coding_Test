@@ -11,7 +11,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.Solution {
     int N;
     int[] dx = {0, 0, 1, -1};
     int[] dy = {1, -1, 0, 0};

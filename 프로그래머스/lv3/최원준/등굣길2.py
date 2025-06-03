@@ -12,7 +12,7 @@
 
 '''
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.Solution {
     public int solution(int m, int n, int[][] puddles) {
         boolean[][] pds = new boolean[n][m];
         for (int[] puddle : puddles) {

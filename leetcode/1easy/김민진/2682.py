@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def circularGameLosers(self, n: int, k: int) -> List[int]:
         visited = [False] * n
         visited[0] = True

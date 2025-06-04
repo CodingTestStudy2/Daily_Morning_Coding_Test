@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     from collections import deque
     def minimumRightShifts(self, nums: List[int]) -> int:
         n = len(nums)

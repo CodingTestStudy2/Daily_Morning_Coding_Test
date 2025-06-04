@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def sortMatrix(self, grid: list[list[int]]) -> list[list[int]]:
         def recur(x:int, y:int) -> None:
             
@@ -40,7 +40,7 @@ class Solution:
         return grid
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
 
     print(sol.sortMatrix([[1,7,3],[9,8,2],[4,5,6]]))
     print(sol.sortMatrix([[0,1],[1,2]]))

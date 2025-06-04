@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def findClosest(self, x: int, y: int, z: int) -> int:
         while True:
             if x == z and y == z:

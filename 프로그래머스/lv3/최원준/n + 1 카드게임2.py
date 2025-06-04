@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public int solution(int coin, int[] cards) {
         int n = cards.length;
         int initCards = n / 3;

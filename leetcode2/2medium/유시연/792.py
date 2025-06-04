@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def numMatchingSubseq(self, s: str, words: List[str]) -> int:
         count = 0
 

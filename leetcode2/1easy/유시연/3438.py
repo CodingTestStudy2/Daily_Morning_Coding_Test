@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def findValidPair(self, s: str) -> str:
         count = {}
         for num in s:

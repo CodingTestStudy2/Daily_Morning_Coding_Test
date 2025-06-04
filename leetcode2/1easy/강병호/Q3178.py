@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def numberOfChild(self, n: int, k: int) -> int:
 
         time = 0
@@ -22,7 +22,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
     print(sol.numberOfChild(3, 5))
     print(sol.numberOfChild(5, 6))
     print(sol.numberOfChild(4, 2))

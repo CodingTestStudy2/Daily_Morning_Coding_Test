@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def surfaceArea(self, grid: List[List[int]]) -> int:
         total = 0
         

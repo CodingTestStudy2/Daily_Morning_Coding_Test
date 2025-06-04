@@ -1,5 +1,5 @@
 # 방법 1
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def minExtraChar(self, s: str, dictionary: List[str]) -> int:
         for word in dictionary:
             s = s.replace(word, "") # 딕셔너리에서 문자 삭제

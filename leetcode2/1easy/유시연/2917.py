@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def findKOr(self, nums: List[int], k: int) -> int:
         count = [0] * 32
 

@@ -57,7 +57,7 @@ def solution(operations):
 '''
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     void removeNumber(PriorityQueue<Integer> heap, Map<Integer, Integer> countMap){
         while (!heap.isEmpty() && countMap.getOrDefault(heap.peek(), 0) == 0){
             heap.poll();

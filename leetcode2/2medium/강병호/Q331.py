@@ -1,6 +1,6 @@
 import string
 
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def isValidSerialization(self, preorder: str) -> bool:
         preorder_list = list(map(str, preorder.split(",")))
         print(preorder_list)
@@ -28,5 +28,5 @@ class Solution:
 
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
     sol.isValidSerialization("9,3,4,#,#,1,#,#,2,#,6,#,#")

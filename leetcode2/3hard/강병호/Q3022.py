@@ -1,6 +1,6 @@
 from math import sqrt
 
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def minOrAfterOperations(self, nums: list[int], k: int) -> int:
         # 1. 지수 구하기
         # 2. 지수 차 큰 것들 기준 k번 &연산처리
@@ -36,5 +36,5 @@ class Solution:
 
     
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
     print(sol.minOrAfterOperations([3,5,3,2,7], 2))

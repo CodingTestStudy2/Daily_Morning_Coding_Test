@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def findIntersectionValues(self, nums1: list[int], nums2: list[int]) -> list[int]:
         answer1, answer2 = 0, 0
 

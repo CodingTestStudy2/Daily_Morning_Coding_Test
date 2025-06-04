@@ -11,7 +11,7 @@
     배열
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     ArrayList<String[]> directions = new ArrayList<>();
 
     public boolean possible(int n, int m, int row, int col, int r, int c, int kRemain) {

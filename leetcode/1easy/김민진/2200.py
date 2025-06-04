@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def findKDistantIndices(self, nums: List[int], key: int, k: int) -> List[int]:
         kd_indices = set()
         for i in range(len(nums)):

@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def cellsInRange(self, s: str) -> list[str]:
         # cells = list(map(str, s.split(":")))
         startCol = s[0]
@@ -17,6 +17,6 @@ class Solution:
 
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
     print(sol.cellsInRange("K1:L2"))
     print(sol.cellsInRange("A1:F1"))

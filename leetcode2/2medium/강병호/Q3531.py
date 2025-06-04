@@ -1,7 +1,7 @@
 
 # x 같은 것들
 
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def countCoveredBuildings(self, n: int, buildings: list[list[int]]) -> int:
         answer = 0
 
@@ -61,7 +61,7 @@ class Solution:
             
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
     # print(sol.countCoveredBuildings(3, [[1,2],[2,2],[3,2],[2,1],[2,3]]))
     print(sol.countCoveredBuildings(3, [[1,1],[1,2],[2,1],[2,2]]))
     print(sol.countCoveredBuildings(5, [[1,3],[3,2],[3,3],[3,5],[5,3]]))

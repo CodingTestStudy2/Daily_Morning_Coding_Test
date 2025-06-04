@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def minimumOperations(self, nums: list[int]) -> int:
         # 맨앞에는 최대한 가장 작은 수
         '''
@@ -30,7 +30,7 @@ class Solution:
         return result
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
     print(sol.minimumOperations([1]))
     # print(sol.minimumOperations([2, 1, 3, 2, 1]))
     # print(sol.minimumOperations([1, 3, 2, 1, 3, 3]))

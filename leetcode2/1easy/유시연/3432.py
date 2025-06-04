@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def countPartitions(self, nums: List[int]) -> int:
         n = len(nums)
         count = 0

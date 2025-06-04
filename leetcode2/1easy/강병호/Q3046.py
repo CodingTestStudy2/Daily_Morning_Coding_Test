@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def isPossibleToSplit(self, nums: list[int]) -> bool:
         # num1 = dict()
         # num2 = dict()
@@ -33,7 +33,7 @@ class Solution:
         return True
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
     print(sol.isPossibleToSplit([2,10,2,7,8,9,7,6,6,9]))
     print(sol.isPossibleToSplit([1,1,1,1]))
     print(sol.isPossibleToSplit([1,2,3,4]))

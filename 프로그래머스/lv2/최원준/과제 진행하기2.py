@@ -9,7 +9,7 @@
     -
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public int serialize(String time) {
         String[] time2 = time.split(":");
         return Integer.parseInt(time2[0]) * 60 + Integer.parseInt(time2[1]);

@@ -9,7 +9,7 @@
     큐
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public int solution(int bridge_length, int weight, int[] truck_weights) {
         Deque<Integer> deque = new ArrayDeque<>();
         for (int i=0; i<bridge_length; i++) deque.addLast(0);

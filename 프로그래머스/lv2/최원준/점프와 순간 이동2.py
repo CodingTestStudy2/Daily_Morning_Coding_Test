@@ -7,7 +7,7 @@
 
 import java.util.*;
 
-public class Solution {
+public class Leetcode.이재훈.이재훈.Solution {
     public int solution(int n) {
         int count = 0;
         while (n>0){

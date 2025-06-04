@@ -7,7 +7,7 @@
     O(
 3. 자료구조 :
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public int solution(int num) {
         long n = num;
         for (int i = 0; i < 501; i++) {

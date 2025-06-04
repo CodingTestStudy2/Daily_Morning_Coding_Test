@@ -9,7 +9,7 @@
     -
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public int solution(int[][] targets) {
         int ans = 0;
         Arrays.sort(targets, (a, b) -> a[1] - b[1]);

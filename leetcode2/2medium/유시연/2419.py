@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def longestSubarray(self, nums: List[int]) -> int:
         maxNum = max(nums)  
         maxLen = 0

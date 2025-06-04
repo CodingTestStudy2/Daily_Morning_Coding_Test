@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def connect(self, root: 'Node') -> 'Node':
         if not root:
             return root

@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public int solution(int[] nums) {
         int n = nums.length/2;
         Set<Integer> kinds = new HashSet<>();

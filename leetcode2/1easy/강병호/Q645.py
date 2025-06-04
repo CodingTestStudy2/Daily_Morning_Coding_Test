@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
         duplicate, miss  = -1, -1
 

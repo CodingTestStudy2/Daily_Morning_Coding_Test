@@ -1,4 +1,4 @@
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     func maxProfit(_ prices: [Int]) -> Int {
         var left: Int = prices[0]
         var right: Int = prices[0]

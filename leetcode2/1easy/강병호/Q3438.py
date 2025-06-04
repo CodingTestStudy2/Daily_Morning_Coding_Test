@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def findValidPair(self, s: str) -> str:
         count_map = dict()
         valid_map = dict()
@@ -29,5 +29,5 @@ class Solution:
 
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
     print(sol.findValidPair("232"))

@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def numDecodings(self, s: str) -> int:
         n = len(s)
         new_str = ''

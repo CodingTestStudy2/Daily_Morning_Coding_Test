@@ -1,4 +1,4 @@
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     func pivotInteger(_ n: Int) -> Int {
         var leftSum = (1...n).reduce(0, +)
         var rightSum = 0

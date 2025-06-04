@@ -14,7 +14,7 @@
 #     # i.e. f(x, y) < f(x + 1, y), f(x, y) < f(x, y + 1)
 #     def f(self, x, y):
 
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def findSolution(self, customfunction: 'CustomFunction', z: int) -> list[list[int]]:
         result = []
 

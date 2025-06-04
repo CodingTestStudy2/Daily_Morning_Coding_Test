@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def sortMatrix(self, grid: List[List[int]]) -> List[List[int]]:
         n = len(grid)
         check = []

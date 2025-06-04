@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def dayOfYear(self, date: str) -> int:
         result = 0
         year, month, day = map(int, date.split("-"))

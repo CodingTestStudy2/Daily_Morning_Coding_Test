@@ -9,7 +9,7 @@
     stack
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public int[] solution(int[] numbers) {
         int n = numbers.length;
         int[] ans = new int[n];

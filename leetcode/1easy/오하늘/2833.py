@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def furthestDistanceFromOrigin(self, moves: str) -> int:
         arr = list(moves)
         cntl = 0

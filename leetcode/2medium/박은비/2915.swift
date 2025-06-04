@@ -1,5 +1,5 @@
 // dp[sum]=max(dp[sum],dp[sum−num]+1)
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     func lengthOfLongestSubsequence(_ nums: [Int], _ target: Int) -> Int {
         var dp = Array(repeating: -1, count: target + 1)
         dp[0] = 0

@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public long solution(int n, int[] times) {
         long left = 1;
         long right = 0;

@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def countCompleteDayPairs(self, hours: list[int]) -> int:
         # 24의 배수 구하기
         # % 24 == 0 
@@ -15,7 +15,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
 
     print(sol.countCompleteDayPairs([12,12,30,24,24]))
     print(sol.countCompleteDayPairs([72,48,24,3]))

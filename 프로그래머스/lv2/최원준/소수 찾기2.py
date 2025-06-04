@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public Set<Integer> permutations(int[] nums) {
         Set<Integer> ans = new HashSet<>();
         boolean[] visited = new boolean[nums.length];

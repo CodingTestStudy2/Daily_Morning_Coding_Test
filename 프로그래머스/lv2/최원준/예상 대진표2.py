@@ -7,7 +7,7 @@
     O(
 3. 자료구조 :
 
-class Solution
+class Leetcode.이재훈.이재훈.Solution
 {
     public int solution(int n, int a, int b) {
         int round = 1;

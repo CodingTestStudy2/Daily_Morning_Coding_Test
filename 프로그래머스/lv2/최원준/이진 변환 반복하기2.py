@@ -12,7 +12,7 @@
 
 '''
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     String ones;
     int zeros;
     public int[] solution(String s) {

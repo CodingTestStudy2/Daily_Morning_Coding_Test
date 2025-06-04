@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def maximumOddBinaryNumber(self, s: str) -> str:
         result = []
         n = len(s)

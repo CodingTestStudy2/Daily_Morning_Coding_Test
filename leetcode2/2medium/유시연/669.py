@@ -1,11 +1,11 @@
 # Definition for a binary tree node.
-# class TreeNode:
+# class 이재훈.TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:
-    def trimBST(self, root: Optional[TreeNode], low: int, high: int) -> Optional[TreeNode]:
+class Leetcode.이재훈.이재훈.Solution:
+    def trimBST(self, root: Optional[이재훈.TreeNode], low: int, high: int) -> Optional[이재훈.TreeNode]:
         if root == None:
             return None
         

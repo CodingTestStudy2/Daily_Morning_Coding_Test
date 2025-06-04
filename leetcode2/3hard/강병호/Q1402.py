@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def maxSatisfaction(self, satisfaction: list[int]) -> int:
         # n 개 dishes
         # like-time coefficient : time[i] * satisfaction[i]
@@ -26,7 +26,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
     print(sol.maxSatisfaction([-1, -8, 0, 5, -9]))
     print(sol.maxSatisfaction([4,3,2]))
     print(sol.maxSatisfaction([-1,-4,-5]))

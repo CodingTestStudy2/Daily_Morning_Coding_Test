@@ -1,6 +1,6 @@
 from collections import deque
 
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
         s = deque(s)
 

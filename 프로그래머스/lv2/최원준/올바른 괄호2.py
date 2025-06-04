@@ -11,7 +11,7 @@
 
 '''
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     boolean solution(String s) {
         Map<Character, Character> map = new HashMap<>();
         map.put(')', '(');

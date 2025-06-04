@@ -1,6 +1,6 @@
 # from itertools import combinations
 
-# class Solution:
+# class Leetcode.이재훈.이재훈.Solution:
 #     def incremovableSubarrayCount(self, nums: list[int]) -> int:
 #         # for i in range(1, len(nums)+1, 1): # subarray lens
 #         right = len(nums) - 1
@@ -21,6 +21,6 @@
 
 
 # if __name__ == "__main__":
-#     sol = Solution()
+#     sol = Leetcode.이재훈.이재훈.Solution()
 #     print(sol.incremovableSubarrayCount([1, 2, 3, 4]))
 #     print(sol.incremovableSubarrayCount([8, 7, 6, 6]))

@@ -7,7 +7,7 @@
     O(
 3. 자료구조 :
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public String solution(int num) {
         return num%2==0 ? "Even" : "Odd";
     }

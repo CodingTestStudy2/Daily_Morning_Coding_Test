@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def countCompleteDayPairs(self, hours: List[int]) -> int:
         n = len(hours)
         count = 0

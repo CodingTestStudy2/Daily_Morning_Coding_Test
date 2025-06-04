@@ -11,7 +11,7 @@
 
 '''
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     static int n;
     public int solution(String[] friends, String[] gifts) {
         n = friends.length;

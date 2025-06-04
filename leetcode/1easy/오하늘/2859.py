@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def sumIndicesWithKSetBits(self, nums: List[int], k: int) -> int:
         ans = 0
         def dfs(n, result):

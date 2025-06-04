@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public int solution(int left, int right) {
         int ans = 0;
         for (int i=left; i<=right; i++) ans += (int)Math.pow((int)Math.sqrt(i),2) == i? -i:i;

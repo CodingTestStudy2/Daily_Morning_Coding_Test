@@ -1,4 +1,4 @@
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     func minimumAverage(_ nums: [Int]) -> Double {
         
         let sortedNums = nums.sorted()

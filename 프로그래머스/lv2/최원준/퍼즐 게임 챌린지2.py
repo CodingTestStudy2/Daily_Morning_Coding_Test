@@ -9,7 +9,7 @@
     -
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public long calcTime(int[] diffs, int[] times, int level) {
         long totalTime = 0;
         totalTime += times[0];

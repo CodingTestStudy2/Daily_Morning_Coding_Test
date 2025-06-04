@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def isPossibleToRearrange(self, s: str, t: str, k: int) -> bool:
         slen = len(s)
 

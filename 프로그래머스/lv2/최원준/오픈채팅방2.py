@@ -9,7 +9,7 @@
     해시맵
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     ArrayList<String> history = new ArrayList<>();
     Map<String, String> uidNameMapper = new HashMap<>();
     Map<String, String> msgTypeAndContent = new HashMap<>();

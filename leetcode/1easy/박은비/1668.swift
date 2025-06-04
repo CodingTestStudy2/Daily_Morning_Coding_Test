@@ -1,4 +1,4 @@
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     func maxRepeating(_ sequence: String, _ word: String) -> Int {
         
         let sequence = Array(sequence)

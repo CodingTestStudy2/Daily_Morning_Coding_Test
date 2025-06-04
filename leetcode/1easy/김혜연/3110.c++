@@ -1,7 +1,7 @@
 #include <vector> 
 #include <utility>
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
 public:
     vector<pair<bool,bool>> alpha;
 

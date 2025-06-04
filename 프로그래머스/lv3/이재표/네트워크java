@@ -1,5 +1,5 @@
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     boolean[]visit;
     public int solution(int n, int[][] computers) {
         int answer = 0;

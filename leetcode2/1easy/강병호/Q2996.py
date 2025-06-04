@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def missingInteger(self, nums: list[int]) -> int:
         
         prefix_sum = nums[0]

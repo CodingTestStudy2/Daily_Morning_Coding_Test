@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public String toNBin(int n, int k) {
         StringBuilder sb = new StringBuilder();
         while (n > 0) {

@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public long solution(int[] b, int[][] edges) {
         long[] a = new long[b.length];
         for (int i=0; i<b.length; i++) a[i] = b[i];

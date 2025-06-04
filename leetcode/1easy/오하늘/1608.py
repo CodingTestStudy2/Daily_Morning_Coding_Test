@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def specialArray(nums) -> int:
         tmp = 1
         while tmp <= len(nums):

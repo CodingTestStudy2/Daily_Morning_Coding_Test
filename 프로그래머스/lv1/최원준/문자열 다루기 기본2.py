@@ -7,7 +7,7 @@
     O(n)
 3. 자료구조 :
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public boolean solution(String s) {
         for (char c : s.toCharArray()) {
             if (Character.isLetter(c)) return false;

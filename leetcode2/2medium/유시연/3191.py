@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def minOperations(self, nums: List[int]) -> int:
         n = len(nums)
         answer = 0

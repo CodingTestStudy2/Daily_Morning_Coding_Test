@@ -1,4 +1,4 @@
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     func maxDepth(_ s: String) -> Int {
 /*
 (1+(2*3)+((8)/4))+1

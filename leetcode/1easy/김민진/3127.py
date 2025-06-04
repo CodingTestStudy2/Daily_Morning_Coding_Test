@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def canMakeSquare(self, grid: List[List[str]]) -> bool:
         for i in range(2):
             for j in range(2):

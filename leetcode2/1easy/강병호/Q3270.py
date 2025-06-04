@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def generateKey(self, num1: int, num2: int, num3: int) -> int:
         num1 = str(num1)
         num2 = str(num2)
@@ -19,7 +19,7 @@ class Solution:
         return int(result)
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
     print(sol.generateKey(1, 10, 1000))
     print(sol.generateKey(1, 2, 3))
     print(sol.generateKey(1987, 879, 798))

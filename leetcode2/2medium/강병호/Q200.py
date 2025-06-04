@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def numIslands(self, grid: list[list[str]]) -> int:
         if not grid:
             return 0

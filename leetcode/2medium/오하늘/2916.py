@@ -1,5 +1,5 @@
 from itertools import combinations
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def lengthOfLongestSubsequence(nums, target) -> int:
         # dp 같은데 구현 못했다..
         nums.sort(reverse=True) # 큰 수부터 (최대를 구하니까)

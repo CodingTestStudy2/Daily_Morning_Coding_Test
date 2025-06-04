@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def __init__(self):
         self.N = None
         self.prices = None

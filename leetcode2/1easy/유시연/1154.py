@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     answer = 0
     def dayOfYear(self, date: str) -> int:
         month_date = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]

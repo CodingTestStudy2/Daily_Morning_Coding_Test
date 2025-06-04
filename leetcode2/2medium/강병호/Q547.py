@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def findCircleNum(self, isConnected: list[list[int]]) -> int:
 
         count = 0

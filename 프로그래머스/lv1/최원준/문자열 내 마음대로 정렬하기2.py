@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public String[] solution(String[] strings, int n) {
         Arrays.sort(strings, (a, b) -> {
             int c = a.charAt(n) - b.charAt(n);

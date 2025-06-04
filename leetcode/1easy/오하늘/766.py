@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def isToeplitzMatrix(self, matrix: List[List[int]]) -> bool:
         # 가로, 세로 다 돌려보면 될듯?
         m, n = len(matrix), len(matrix[0])

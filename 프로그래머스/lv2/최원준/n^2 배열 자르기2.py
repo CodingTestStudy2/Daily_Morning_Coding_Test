@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     int[] ans;
     int idx;
     public int[] solution(int n, long left, long right) {

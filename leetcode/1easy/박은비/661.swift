@@ -1,6 +1,6 @@
 import Foundation
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
 
     func imageSmoother(_ img: [[Int]]) -> [[Int]] {
         var answer: [[Int]] = img

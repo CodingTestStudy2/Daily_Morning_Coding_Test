@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def maxSatisfaction(self, satisfaction: List[int]) -> int:
         sort_sat = sorted(satisfaction)
         like_time = 0

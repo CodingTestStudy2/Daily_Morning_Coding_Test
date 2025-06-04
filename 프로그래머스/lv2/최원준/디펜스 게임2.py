@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public int solution(int n, int k, int[] enemies) {
         PriorityQueue<Integer> pq = new PriorityQueue<>((a,b) -> b-a);
 

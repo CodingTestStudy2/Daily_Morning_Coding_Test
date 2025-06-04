@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public String solution(int n) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i<n/2; i++) sb.append("수박");

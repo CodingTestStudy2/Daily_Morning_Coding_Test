@@ -9,7 +9,7 @@
     -
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     int N, M;
     int[][] visited;
     int areaNum = 0;

@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def findNonMinOrMax(self, nums: List[int]) -> int:
         nums.sort()
         nums.pop()

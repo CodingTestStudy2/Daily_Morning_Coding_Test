@@ -1,6 +1,6 @@
 from typing import List
 
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def kLengthApart(self, nums: List[int], k: int) -> bool:
         n = len(nums)
         dis = 0

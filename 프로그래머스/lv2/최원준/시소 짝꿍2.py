@@ -12,7 +12,7 @@
     해시맵, 배열
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public boolean match(int a, int b) {
         for (int d1=2; d1<=4; d1++) {
             for (int d2=2; d2<=4; d2++) {

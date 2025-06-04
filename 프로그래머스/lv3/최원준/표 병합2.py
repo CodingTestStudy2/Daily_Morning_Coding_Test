@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     List<String> ansList = new ArrayList<>();
 
     Map<String, String> par = new HashMap<>();

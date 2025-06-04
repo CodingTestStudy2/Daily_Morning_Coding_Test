@@ -9,7 +9,7 @@
 
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public boolean check(int student, int answer, int idx) {
         if (student == 1) {
             int[] p1 = {1, 2, 3, 4, 5};

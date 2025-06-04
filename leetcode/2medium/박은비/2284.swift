@@ -1,4 +1,4 @@
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     func largestWordCount(_ messages: [String], _ senders: [String]) -> String {
         var senderWordCount: [String: Int] = [:]
 

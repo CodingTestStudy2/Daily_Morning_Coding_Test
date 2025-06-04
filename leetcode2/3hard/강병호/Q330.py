@@ -2,7 +2,7 @@ from itertools import combinations
 import sys
  
 sys.setrecursionlimit(3000)
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def minPatches(self, nums: list[int], n: int) -> int:
          # [1, n] 요소들 모두 형성하도록 처리
         setList = set(nums)
@@ -43,5 +43,5 @@ class Solution:
 
 
 if __name__ == "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
     print(sol.minPatches([1,3], 6))

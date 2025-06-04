@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def minimumBuckets(self, hamsters: str) -> int:
         n = len(hamsters)
         hamsters = list(hamsters)

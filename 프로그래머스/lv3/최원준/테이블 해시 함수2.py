@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public int solution(int[][] data, int col, int row_begin, int row_end) {
         Arrays.sort(data, (a,b) -> {
             if (a[col-1]==b[col-1]) return b[0]-a[0];

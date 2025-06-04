@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def maxSum(self, nums: list[int]) -> int:
         # 최대 합
         # 1. 완전탐색 : -100 ~ 100 존재하면 합
@@ -19,7 +19,7 @@ class Solution:
         return result
 
 if __name__== "__main__":
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
     print(sol.maxSum([5, 4, 3, 2, 1]))
     print(sol.maxSum([1,2,-1,-2,1,0,-1]))
     print(sol.maxSum([-1]))

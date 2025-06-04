@@ -1,5 +1,5 @@
 # Check if Array is Good
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def isGood(self, nums: List[int]) -> bool:
         flag = True
         nums.sort()

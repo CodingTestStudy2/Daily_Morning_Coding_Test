@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def distance(self, nums: list[int]) -> list[int]:
         index_map = defaultdict(list)
         for i, num in enumerate(nums):

@@ -11,7 +11,7 @@
     해시셋
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     Set<Integer> visited = new HashSet<>();
     int ans = 0;
 

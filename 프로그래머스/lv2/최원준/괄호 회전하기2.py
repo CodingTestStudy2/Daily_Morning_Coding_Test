@@ -11,7 +11,7 @@
     Deque, Stack
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     Deque<Character> deque = new LinkedList<>();
     Map<Character, Character> pairs = new HashMap<>();
     Stack<Character> stack;

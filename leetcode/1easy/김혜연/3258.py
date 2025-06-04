@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def countKConstraintSubstrings(self, s: str, k: int) -> int:
         count = [0, 0]  # count[0]은 '0'의 개수, count[1]은 '1'의 개수를 저장
         result = 0

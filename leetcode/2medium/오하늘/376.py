@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def wiggleMaxLength(self, nums: List[int]) -> int:
         if not nums:
             return 0       

@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def incremovableSubarrayCount(self, nums: List[int]) -> int:
         def cut_arr(arr: List[int]) -> bool:
             return all(arr[i] < arr[i+1] for i in range(len(arr) - 1))

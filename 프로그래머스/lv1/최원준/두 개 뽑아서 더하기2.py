@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-public class Solution {
+public class Leetcode.이재훈.이재훈.Solution {
     public int[] solution(int[] numbers) {
         Set<Integer> resultSet = new HashSet<>();
 

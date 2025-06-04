@@ -10,7 +10,7 @@
     스택
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public String[] count110 (String s) {
         int ans = 0;
         Stack<Character> stack = new Stack<>();

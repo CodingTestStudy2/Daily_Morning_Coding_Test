@@ -7,7 +7,7 @@
     O(
 3. 자료구조 :
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public int solution(int n, int[] money) {
         int MOD = 1000000007;
         int[] dp = new int[n+1];

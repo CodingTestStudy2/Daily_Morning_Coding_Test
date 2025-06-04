@@ -1,4 +1,4 @@
-class Solution:
+class Leetcode.이재훈.이재훈.Solution:
     def subarraySum(self, nums: list[int]) -> int:
         result = 0
         for i, num in enumerate(nums):
@@ -13,6 +13,6 @@ class Solution:
         return result
 
 if "__main__" == __name__:
-    sol = Solution()
+    sol = Leetcode.이재훈.이재훈.Solution()
     print(sol.subarraySum([2, 3, 1]))
     print(sol.subarraySum([3, 1, 1, 2]))

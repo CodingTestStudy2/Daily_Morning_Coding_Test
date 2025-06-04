@@ -8,7 +8,7 @@
 3. 자료구조 :
 
 import java.util.*;
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public int deserialize(String time) {
         int[] hm = Arrays.stream(time.split(":")).mapToInt(Integer::parseInt).toArray();
         return hm[0] * 60 + hm[1];

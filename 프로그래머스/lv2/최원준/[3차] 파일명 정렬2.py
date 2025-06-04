@@ -26,7 +26,7 @@ class CustomFile {
     }
 }
 
-class Solution {
+class Leetcode.이재훈.이재훈.Solution {
     public CustomFile split(String s) {
         int idx = 0;
 

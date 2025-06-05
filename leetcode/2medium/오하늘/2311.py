@@ -1,5 +1,9 @@
 # 예제 1 틀림..
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution:
+=======
+class Leetcode.이재훈.Solution:
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     def longestSubsequence(self, s: str, k: int) -> int:
         parts = s.split("1") # 1 단위로 삭제
 

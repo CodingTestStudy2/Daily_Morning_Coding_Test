@@ -1,7 +1,11 @@
 # 반복문으로 구현 
 
 ```kotlin
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     fun solution(input: String): String {
         var answer = ""
         if(input.isBlank()) return input
@@ -45,7 +49,11 @@ class Leetcode.이재훈.이재훈.Solution {
 ## capitalize() - v1.5부터 deprecated
 
 ```kotlin
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     fun solution(input: String) = input.lowercase().split(" ").map {
         it.capitalize()
     }.joinToString(" ")
@@ -55,7 +63,11 @@ class Leetcode.이재훈.이재훈.Solution {
 ## uppercaseChar() 
 
 ```kotlin 
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     fun solution(input: String) = input.split(" ").map {
         if(it.isEmpty()) it
         else{

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution:
+=======
+class Leetcode.이재훈.Solution:
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     def generateKey(self, num1: int, num2: int, num3: int) -> int:
         num1 = str(num1)
         num2 = str(num2)
@@ -19,7 +23,11 @@ class Leetcode.이재훈.이재훈.Solution:
         return int(result)
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     sol = Leetcode.이재훈.이재훈.Solution()
+=======
+    sol = Leetcode.이재훈.Solution()
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     print(sol.generateKey(1, 10, 1000))
     print(sol.generateKey(1, 2, 3))
     print(sol.generateKey(1987, 879, 798))

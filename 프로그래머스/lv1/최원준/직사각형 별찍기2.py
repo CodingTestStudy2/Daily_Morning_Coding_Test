@@ -10,7 +10,11 @@
 
 import java.util.Scanner;
 
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

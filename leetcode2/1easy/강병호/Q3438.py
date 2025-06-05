@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution:
+=======
+class Leetcode.이재훈.Solution:
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     def findValidPair(self, s: str) -> str:
         count_map = dict()
         valid_map = dict()
@@ -29,5 +33,9 @@ class Leetcode.이재훈.이재훈.Solution:
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     sol = Leetcode.이재훈.이재훈.Solution()
+=======
+    sol = Leetcode.이재훈.Solution()
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     print(sol.findValidPair("232"))

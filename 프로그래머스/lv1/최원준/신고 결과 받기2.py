@@ -12,7 +12,11 @@
 
 '''
 import java.util.*;
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     public int[] solution(String[] id_list, String[] report, int k) {
         Map<String, Set<String>> reported = new HashMap<>();
         Map<String, Integer> noted = new HashMap<>();

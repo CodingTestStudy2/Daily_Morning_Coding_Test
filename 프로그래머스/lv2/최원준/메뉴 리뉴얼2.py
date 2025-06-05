@@ -17,7 +17,11 @@ class Course {
         this.freq= freq;
     }
 }
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     Map<String, Integer> allCourses = new HashMap<>();
 
     public void combinations(String s, String curr, int start, int r) {

@@ -8,7 +8,11 @@
 3. 자료구조 :
 
 import java.util.*;
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     public long solution(int[] sequence) {
         long pos = 0, neg = 0, ans = 0;
         int mul = 1;

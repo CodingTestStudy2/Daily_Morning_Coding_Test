@@ -11,7 +11,11 @@
     배열
 
 import java.util.*;
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     ArrayList<String[]> directions = new ArrayList<>();
 
     public boolean possible(int n, int m, int row, int col, int r, int c, int kRemain) {

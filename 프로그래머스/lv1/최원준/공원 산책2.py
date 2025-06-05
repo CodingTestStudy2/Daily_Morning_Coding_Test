@@ -51,7 +51,11 @@ def solution(park, routes):
 
 
 '''
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     boolean canMove(char[][] carr, int row, int col, char dir, int dist){
         for (int i=1; i<=dist; i++) {
             switch (dir) {

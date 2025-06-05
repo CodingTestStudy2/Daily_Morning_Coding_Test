@@ -3,7 +3,11 @@ from collections import deque
 dx = [-1, 1, 0, 0]  # 상, 하, 좌, 우
 dy = [0, 0, -1, 1]
 
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution(object):
+=======
+class Leetcode.이재훈.Solution(object):
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     def numEnclaves(self, grid):
         def bfs(x, y):
             queue = deque([(x, y)])

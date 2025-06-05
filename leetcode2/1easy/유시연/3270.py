@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution:
+=======
+class Leetcode.이재훈.Solution:
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     def generateKey(self, num1: int, num2: int, num3: int) -> int:
         n1 = f"{num1:04d}"
         n2 = f"{num2:04d}"

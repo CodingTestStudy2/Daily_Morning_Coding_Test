@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution:
+=======
+class Leetcode.이재훈.Solution:
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     def removeAnagrams(self, words: list[str]) -> list[str]:
         for i in range(len(words)-1, 0, -1):
             if self.checkAnagrams(words[i], words[i-1]):
@@ -16,7 +20,11 @@ class Leetcode.이재훈.이재훈.Solution:
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     sol = Leetcode.이재훈.이재훈.Solution()
+=======
+    sol = Leetcode.이재훈.Solution()
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
 
     print(sol.removeAnagrams(["abba","baba","bbaa","cd","cd"]))
     print(sol.removeAnagrams(["a","b","c","d","e"]))

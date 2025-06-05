@@ -14,7 +14,11 @@
     3차배열
 
 import java.util.*;
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     int MOD = 20170805;
     public int solution(int m, int n, int[][] cityMap) {
         int rows = m, cols = n;

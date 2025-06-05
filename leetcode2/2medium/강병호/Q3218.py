@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution:
+=======
+class Leetcode.이재훈.Solution:
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     def minimumCost(self, m: int, n: int, horizontalCut: list[int], verticalCut: list[int]) -> int:
         horizontalCutCount = 0
         verticalCutCount = 0
@@ -36,7 +40,11 @@ class Leetcode.이재훈.이재훈.Solution:
         return result
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     sol = Leetcode.이재훈.이재훈.Solution()
+=======
+    sol = Leetcode.이재훈.Solution()
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
 
     # print(sol.minimumCost(3, 2, [1,3], [5]))
     # print(sol.minimumCost(2, 2, [7], [4]))

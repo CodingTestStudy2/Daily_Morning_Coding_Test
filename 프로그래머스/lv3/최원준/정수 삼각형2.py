@@ -10,7 +10,11 @@
 '''
 
 '''
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     public int solution(int[][] triangle) {
         int total_row = triangle.length;
         for (int row = total_row-2; row>=0; row--) {

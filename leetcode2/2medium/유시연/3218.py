@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution:
+=======
+class Leetcode.이재훈.Solution:
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     def minCutCost(self, m: int, n: int, horizontalCut: list[int], verticalCut: list[int]) -> int:
         horizontalCut.sort(reverse=True)
         verticalCut.sort(reverse=True)

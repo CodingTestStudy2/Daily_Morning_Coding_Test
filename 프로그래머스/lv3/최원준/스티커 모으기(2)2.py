@@ -8,7 +8,11 @@
 
 import java.util.*;
 /*
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     private int[] dp1, dp2;
 
     public int calc(int[] sticker, int idx, boolean first){
@@ -40,7 +44,11 @@ class Leetcode.이재훈.이재훈.Solution {
 }
 */
 
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     public int solution(int sticker[]) {
         int n = sticker.length;
         if (n==1) return sticker[0];

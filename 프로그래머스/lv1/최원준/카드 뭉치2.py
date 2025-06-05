@@ -8,7 +8,11 @@
 3. 자료구조 :
 
 
+<<<<<<< HEAD
 class Leetcode.이재훈.이재훈.Solution {
+=======
+class Leetcode.이재훈.Solution {
+>>>>>>> ab7f46f73d8f18bcd38c5cf06ecabae64f53a424
     public String solution(String[] cards1, String[] cards2, String[] goal) {
         int n1 = cards1.length, n2 = cards2.length;
         int idx1 = 0, idx2 = 0;

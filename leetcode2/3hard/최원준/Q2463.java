@@ -36,18 +36,6 @@ public class Q2463 {
         int n;
         int m=0;
 
-        /*
-            공장, .. 공장 < 로봇 <= 공장일때,
-            로봇이 항상 가장 왼쪽 공장으로 가면 무조건 가능.
-            가장 왼쪽 공장으로 가는게 이득이면, 무조건 왼쪽 공장으로 간다.
-            그 다음 공장으로 가게되면, 불가능한 경우가 생길 수도 있음.
-
-            로봇 <= 공장 일때,
-            로봇은 항상 오른쪽 공장으로 가면 됨.
-
-            가장 왼쪽 공장을 채우는 방법은 항상 가능.
-
-            */
         public long minimumTotalDistance(List<Integer> robot, int[][] factory) {
             Collections.sort(robot);
             Arrays.sort(factory, (a, b)->a[0]-b[0]);

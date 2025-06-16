@@ -2,9 +2,8 @@ package 한준호;
 
 class Solution {
     public boolean isPossibleDivide(int[] nums, int k) {
-        Map<Integer, Integer> check = new TreeMap<>();
+        Map<Integer, Integer> check = new HashMap<>();
         Set<Integer> included = new TreeSet<>();
-        Arrays.sort(nums);
         for(int i = 0; i<nums.length; i++){
             included.add(nums[i]);
             check.merge(nums[i], 1, Integer::sum);

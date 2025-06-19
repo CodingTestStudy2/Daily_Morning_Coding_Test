@@ -1,3 +1,5 @@
+package 한준호;
+
 class Solution {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         int[] indegree = new int[numCourses];

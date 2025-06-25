@@ -20,34 +20,34 @@ class Solution {
             rightList.add(arr[i]);
         }
         // 우측 리스트에서 하나 꺼낼 때, 좌측 리스트에서 이 수 * 2보다 큰 원소의 갯수 반환
+        int lIndexForCount = 0;
         for(int i = 0; i<rightList.size(); i++){
             long now = rightList.get(i) * 2;
-            ans += getOver(now, leftList);
+            while(lIndexForCount< leftList.size() && now >= leftList.get(lIndexForCount)) lIndexForCount++;
+            ans += leftList.size() - lIndexForCount;
         }
-        List<Long> resultList = new ArrayList<>(leftList);
-        resultList.addAll(rightList);
-        Collections.sort(resultList);
+        List<Long> resultList = new ArrayList<>();
+        int lInd = 0;
+        int rInd = 0;
+        while(lInd < leftList.size() && rInd < rightList.size()){
+            if(leftList.get(lInd) <= rightList.get(rInd)){
+                resultList.add(leftList.get(lInd++));
+            }else{
+                resultList.add(rightList.get(rInd++));
+            }
+        }
+        while(lInd < leftList.size()){
+            resultList.add(leftList.get(lInd++));
+        }
+        while(rInd < rightList.size()){
+            resultList.add(rightList.get(rInd++));
+        }
 
         for(int i = 0; i<resultList.size(); i++){
             arr[l + i] = resultList.get(i);
         }
         return ans;
     }
-
-    public int getOver(long now, List<Long> list){
-        int l = 0;
-        int r = list.size() - 1;
-        while(l <= r){
-            int mid = (l + r)/2;
-            if(now >= list.get(mid)){
-                l = mid + 1;
-            } else {
-                r = mid - 1;
-            }
-        }
-        return list.size() - l;
-    }
-
     /**
      이전 배열에서 값 추출하는 방법
      매 조회마다 이분탐색
@@ -60,5 +60,7 @@ class Solution {
      현재 원소 * 2 보다 큰 이전까지 등장한 모든 수를 반환
      정렬된 구조를 유지하면서, 이전까지 등장한 모든 수 찾는 법
      병합정렬 도중 연산?
+
+     0 0 0 0 | 0 0 | 0 0
      */
 }

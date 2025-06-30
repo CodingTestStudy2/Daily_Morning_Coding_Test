@@ -1,5 +1,6 @@
 package Leetcode.김도연;
 
+
 public class Q1302  {
     public int deepestLeavesSum(TreeNode root) {
         if (root == null) return 0;

@@ -1,5 +1,6 @@
 package Leetcode.김도연;
 
+
 class Q2446 {
     public boolean haveConflict(String[] event1, String[] event2) {
         int h0, h1, h2, h3, m0, m1, m2, m3;

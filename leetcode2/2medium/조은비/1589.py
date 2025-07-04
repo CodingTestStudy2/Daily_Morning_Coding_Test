@@ -11,6 +11,7 @@ class Solution:
         n = len(nums)
         index = [0] * n
 
+        # 여기서 타임 오류 나는듯??
         for s,e in requests:
             for i in range(s, e+1):
             # 해당 구간을 전부 +1 해야하는디

@@ -5,18 +5,18 @@ import java.util.Deque;
 
 public class Q3561  {
     public String resultingString(String s) {
-        Deque<Character> stack = new ArrayDeque<>();
+        Deque<Character> deque = new ArrayDeque<>();
 
         for (char c : s.toCharArray()) {
-            if (!stack.isEmpty() && isConsecutive(stack.peek(), c))
-                stack.pop();
+            if (!deque.isEmpty() && isConsecutive(deque.peek(), c))
+                deque.pop();
             else
-                stack.push(c);
+                deque.push(c);
         }
 
         StringBuilder sb = new StringBuilder();
-        while (!stack.isEmpty())
-            sb.append(stack.pollLast());
+        while (!deque.isEmpty())
+            sb.append(deque.pollLast());
 
         return sb.toString();
     }

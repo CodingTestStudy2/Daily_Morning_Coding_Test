@@ -3,13 +3,13 @@ package Leetcode.김도연;
 import java.util.HashMap;
 import java.util.Map;
 
-class Cashier {
+class Q1357 {
     private int n;
     private int discount;
     private int count;
     private Map<Integer, Integer> priceMap;
 
-    public Cashier(int n, int discount, int[] products, int[] prices) {
+    public Q1357(int n, int discount, int[] products, int[] prices) {
         this.n = n;
         this.discount = discount;
         this.count = 0;

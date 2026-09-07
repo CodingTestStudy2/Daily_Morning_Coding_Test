@@ -1,0 +1,17 @@
+/**
+ * @param {number} n
+ * @param {number} k
+ * @return {number}
+ */
+var sumBase = function(n, k) {
+    const num = n.toString(k);
+    let sum = 0;
+    let arr = [];
+    arr = num.split("").map(Number);
+
+    for (let i = 0; i<arr.length; i++){
+        sum += arr[i];
+    }
+
+    return sum;
+};

@@ -1,0 +1,43 @@
+/**
+ * @param {number[][]} mat
+ * @param {number[][]} target
+ * @return {boolean}
+ */
+var findRotation = function(mat, target) {
+    const n = mat.length;
+    let is0 = true;
+    let is90 = true;
+    let is180= true;
+    let is270 = true;
+    for (let i = 0; i<n; i++){
+        for (let j=0; j<n; j++){
+            // 0도
+            if (target[i][j] !== mat[i][j]){
+                is0 = false;
+            }
+            // 90도
+            if (target[j][n-1-i] !== mat[i][j]){
+                is90 = false;
+            }
+            // 180도
+            if (target[n-1-i][n-1-j] !== mat[i][j]){
+                is180 = false;
+            }
+            // 270도
+            if (target[n-1-j][i] !== mat[i][j]){
+                is270 = false;
+            }
+        }
+    }
+    if (is0 || is90 || is180 || is270) {
+        return true;
+    } else return false;
+};
+
+// 0,0 0,1 0,2
+// 1,0 1,1 1,2
+// 2,0 2,1 2,2
+
+// (i, j) -> (j, n-1-i)
+// -> (n-1-i, n-1-j)
+// -> (n-1-j, i)

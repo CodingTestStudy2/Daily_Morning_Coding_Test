@@ -1,0 +1,20 @@
+/**
+ * @param {number} length
+ * @param {number} width
+ * @param {number} height
+ * @param {number} mass
+ * @return {string}
+ */
+
+ // 시간 복잡도 O(1)
+var categorizeBox = function(length, width, height, mass) {
+    let volume = length * width * height;
+    if ((volume >= 10**9 || length >= 10**4 || width >= 10**4 || height >= 10**4) && (mass>=100)){
+        return "Both";
+    } else if (mass >= 100){
+        return "Heavy";
+    } else if (volume >= 10**9 || length >= 10**4 || width >= 10**4 || height >= 10**4){
+        return "Bulky";
+    }
+    else { return "Neither" };
+};

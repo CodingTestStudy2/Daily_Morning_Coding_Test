@@ -1,0 +1,20 @@
+/**
+ * @param {character[][]} boxGrid
+ * @return {character[][]}
+ */
+var rotateTheBox = function(boxGrid) {
+    // 1. 돌 먼저 오른쪽으로
+    // 1-1. * 이면 stop, # 이동
+    // 2. 90도 회전
+
+    const m = boxGrid.length;   // 1x3
+    const n = boxGrid[0].length;
+
+    let ans = Array.from(
+        {length : n},
+        () => Array(m).fill('.')); // 3x1
+    
+    for (let i = 0; i<m; i++){
+        
+    }
+};

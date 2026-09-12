@@ -1,0 +1,62 @@
+/**
+ * @param {number[][]} mat
+ * @return {number[][]}
+ */
+var diagonalSort = function(mat) {
+    const m = mat.length;
+    const n = mat[0].length;
+
+    for (let i = 0; i<m; i++){ // (i, 0)
+        let x = i;
+        let y = 0;
+
+        let arr = [];
+
+        while (x < m && y < n){
+            arr.push(mat[x][y]);
+
+            x++;
+            y++;
+        }
+
+        arr.sort((a, b) => a-b);
+
+        x = i;
+        y = 0;
+
+        for (let k = 0; k < arr.length; k++) {
+            mat[x][y] = arr[k];
+
+            x++;
+            y++;
+        }
+    }
+
+  for (let j = 1; j < n; j++) {
+        let x = 0;
+        let y = j;
+
+        let arr = [];
+
+        while (x < m && y < n) {
+            arr.push(mat[x][y]);
+
+            x++;
+            y++;
+        }
+
+        arr.sort((a, b) => a - b);
+
+        x = 0;
+        y = j;
+
+        for (let k = 0; k < arr.length; k++) {
+            mat[x][y] = arr[k];
+
+            x++;
+            y++;
+        }
+    }
+
+    return mat;
+};
